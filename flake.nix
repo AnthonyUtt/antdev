@@ -29,17 +29,16 @@
             export PATH=$PNPM_HOME:$PATH
 
             # install pnpm (should grab latest version to keep lock file up to date)
-            pnpm add -g pnpm
+            pnpm self-update
 
             # install deps
             pnpm install
 
-            # clear screen
-            clear
-
             # print MOTD
-            echo "Welcome to the AntDev Gatsby flake dev shell!"
-            echo "To start the Gatsby development server, run 'pnpm start'"
+            echo
+            echo
+            echo "Welcome to the AntDev Eleventy flake dev shell!"
+            echo "To start the Eleventy development server, run 'pnpm start'"
             echo "To add a new package, run 'pnpm add [--dev] <package-name>'"
             echo
           '';

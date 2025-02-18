@@ -1,0 +1,23 @@
+{
+  "name": "My Site",
+  "baseUrl": "https://example.com",
+  "description": "A description of my site",
+  "copyright": {
+    "startYear": 2025,
+    "owner": "My Company"
+  },
+  "navigation": [
+    {
+      "text": "Home",
+      "url": "/"
+    },
+    {
+      "text": "About",
+      "url": "/about"
+    },
+    {
+      "text": "Contact",
+      "url": "/contact"
+    }
+  ]
+}

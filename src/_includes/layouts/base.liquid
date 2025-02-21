@@ -1,0 +1,31 @@
+{% if useFullTitle == true %}
+  {% assign pageTitle = title %}
+{% else %}
+  {% capture pageTitle %}{{ title | append: " | " | append: site.name}}{% endcapture %}
+{% endif %}
+{% capture pageUrl %}{{ site.baseUrl | append: page.url }}{% endcapture %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="googlebot-news" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="generator" content="{{ eleventy.generator }}">
+
+    <title>{{ pageTitle }}</title>
+    <meta name="description" content="{{ description }}">
+    <link rel="canonical" href="{{ pageUrl }}" />
+
+    <!-- Twitter Card data -->
+    <meta property="og:title" content="{{ pageTitle }}" />
+    <meta property="og:url" content="{{ pageUrl }}"/>
+    <meta property="og:description" content="{{ description }}" />
+    {% if image %}<meta property="og:image" content="https://www.example.com/sample.jpg"/>{% endif %}
+
+    <link rel="stylesheet" href="/bundle.css">
+  </head>
+  <body>
+    {{ content }}
+  </body>
+</html>

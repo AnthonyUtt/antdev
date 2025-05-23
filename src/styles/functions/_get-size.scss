@@ -1,0 +1,13 @@
+@use 'sass:map';
+@use 'config' as *;
+
+@function get-size($size-key) {
+  $response: map.get($size-scale, $size-key);
+
+  @if ($response) {
+    @return $response;
+  }
+
+  @warn "Size `#{$size-key}` not found in `$size-scale` map.";
+  @return null;
+}

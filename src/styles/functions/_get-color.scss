@@ -1,0 +1,13 @@
+@use 'sass:map';
+@use 'config' as *;
+
+@function get-color($color-name) {
+  $response: map.get($colors, $color-name);
+
+  @if ($response) {
+    @return $response;
+  }
+
+  @warn "Color `#{$color-name}` not found in `$colors` map.";
+  @return null;
+}

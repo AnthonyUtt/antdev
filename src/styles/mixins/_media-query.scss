@@ -1,0 +1,16 @@
+@use 'sass:map';
+@use '../config' as *;
+
+
+@mixin media-query($breakpoint) {
+  $breakpoints: map.get($config, 'breakpoints');
+  $media-query: map.get($breakpoints, $breakpoint);
+
+  @if ($media-query) {
+    @media #{$media-query} {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint `#{$breakpoint}` not found in config.";
+  }
+}

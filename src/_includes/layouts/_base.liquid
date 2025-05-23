@@ -23,9 +23,10 @@
     <meta property="og:description" content="{{ description }}" />
     {% if image %}<meta property="og:image" content="https://www.example.com/sample.jpg"/>{% endif %}
 
-    <link rel="stylesheet" href="/bundle.css">
+    <link rel="stylesheet" href="/styles/main.css">
   </head>
   <body>
+    {% include './partials/header' %}
     {{ content }}
   </body>
 </html>

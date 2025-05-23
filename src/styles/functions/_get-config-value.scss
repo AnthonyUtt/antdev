@@ -1,0 +1,17 @@
+@use 'sass:map';
+@use 'config' as *;
+
+@function get-config-value($key, $value-key) {
+  $utility: map.get($config, $key);
+  $property: map.get($utility, 'property');
+  $items: map.get($utility, 'items');
+
+  $item-value: map.get($items, $value-key);
+
+  @if ($property and $item-value) {
+    @return ('property': #{$property}, 'value': #{$item-value});
+  }
+
+  @warn "Config value for `#{$key}` and `#{$value-key}` not found.";
+  @return false;
+}

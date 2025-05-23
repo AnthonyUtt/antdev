@@ -11,10 +11,11 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "packageManager": "pnpm@10.4.1",
+  "packageManager": "pnpm@10.11.0",
   "dependencies": {
     "@11ty/eleventy": "^3.0.0",
     "clean-css": "^5.3.3",
+    "gorko": "^0.9.1",
     "sass": "^1.85.0"
   }
 }

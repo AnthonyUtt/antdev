@@ -1,0 +1,59 @@
+@use 'sass:map';
+@use 'sass:meta';
+@use '../config' as *;
+
+@mixin generate-utility-classes() {
+  // Run the standard cycle first
+  @include cycle('', false);
+
+  // For each breakpoint, run the cycle again with the prefix
+  @each $key, $value in map.get($config, 'breakpoints') {
+    $prefix: #{$key + '\\:'};
+    $is-breakpoint: true;
+
+    @media #{$value} {
+      @include cycle($prefix, $is-breakpoint);
+    }
+  }
+}
+
+@mixin cycle($prefix, $is-breakpoint) {
+  @each $selector, $props in $config {
+    @if (meta.type-of($props) == 'map') {
+      @include process-collection($props, $prefix, $selector, $is-breakpoint);
+    }
+  }
+}
+
+@mixin process-collection($collection, $prefix, $selector, $is-breakpoint) {
+  $items: map.get($collection, 'items');
+  $output: map.get($collection, 'output');
+  $property: map.get($collection, 'property');
+
+  @if ($property and $items) {
+    @if ($output == 'responsive') {
+      @include generate-css(
+        #{$prefix + $selector},
+        $property,
+        $items
+      );
+    }
+    @else if ($output == 'standard') {
+      @if ($is-breakpoint != true) {
+        @include generate-css(
+          #{$prefix + $selector},
+          $property,
+          $items
+        );
+      }
+    }
+  }
+}
+
+@mixin generate-css($selector, $property, $items) {
+  @each $key, $value in $items {
+    #{'.' + $selector + '-' + $key} {
+      #{$property}: #{$value};
+    }
+  }
+}

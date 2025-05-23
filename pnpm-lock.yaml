@@ -14,6 +14,9 @@ importers:
       clean-css:
         specifier: ^5.3.3
         version: 5.3.3
+      gorko:
+        specifier: ^0.9.1
+        version: 0.9.1
       sass:
         specifier: ^1.85.0
         version: 1.85.0
@@ -442,6 +445,9 @@ packages:
   glob@10.4.5:
     resolution: {integrity: sha512-7Bv8RF0k6xjo7d4A/PxYLbUCfb6c+Vpd2/mB2yRDlew7Jb5hEXiCD9ibfO7wpk8i4sevK6DFny9h7EYbM3/sHg==}
     hasBin: true
+
+  gorko@0.9.1:
+    resolution: {integrity: sha512-yZCIqDoEyqRAiiAC6+hH7IcsfnJDCmCinVL79n+VwbcU7brAplwh1jjtky3p9O+jMlFknZzjjzqS/9K2BDRhEA==}
 
   graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
@@ -1294,6 +1300,10 @@ snapshots:
       minipass: 7.1.2
       package-json-from-dist: 1.0.1
       path-scurry: 1.11.1
+
+  gorko@0.9.1:
+    dependencies:
+      sass: 1.85.0
 
   graceful-fs@4.2.11: {}
 

@@ -1,0 +1,12 @@
+@use 'sass:map';
+@use 'get-config-value' as *;
+
+@function get-utility-value($key, $value-key) {
+  $values: get-config-value($key, $value-key);
+
+  @if ($values) {
+    @return map.get($values, 'value');
+  }
+
+  @return null;
+}

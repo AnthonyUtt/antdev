@@ -1,5 +1,5 @@
 {% if useFullTitle == true %}
-  {% assign pageTitle = title %}
+  {% set pageTitle = title %}
 {% else %}
   {% capture pageTitle %}{{ title | append: " | " | append: site.name}}{% endcapture %}
 {% endif %}
@@ -27,6 +27,6 @@
   </head>
   <body>
     {% include './partials/header' %}
-    {{ content }}
+    {% block content %}{% endblock %}
   </body>
 </html>

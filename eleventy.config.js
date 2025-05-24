@@ -6,7 +6,10 @@ const BASE_CONFIG = {
     input: "src",
     output: "public",
   },
-  templateFormats: ["html", "liquid", "11ty.js"],
+  markdownTemplateEngine: "njk",
+  dataTemplateEngine: "njk",
+  htmlTemplateEngine: "njk",
+  templateFormats: ["html", "njk", "11ty.js"],
 };
 
 export default async function(config) {
@@ -18,8 +21,8 @@ export default async function(config) {
 };
 
 function setupLayouts(config) {
-  config.addLayoutAlias("default", "layouts/default.liquid");
-  config.addLayoutAlias("article", "layouts/article.liquid");
+  config.addLayoutAlias("default", "layouts/default.html.njk");
+  config.addLayoutAlias("article", "layouts/article.html.njk");
 }
 
 function setupAssetPassthrough(config) {

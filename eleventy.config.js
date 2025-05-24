@@ -1,6 +1,8 @@
 import path from 'path';
 import * as sass from 'sass';
 
+import { sortByDisplayOrder } from './src/utils/collections.js';
+
 const BASE_CONFIG = {
   dir: {
     input: "src",
@@ -17,8 +19,23 @@ export default async function(config) {
   setupAssetPassthrough(config);
   setupSassPipeline(config);
 
+  setupCollections(config);
+
   return BASE_CONFIG;
 };
+
+function setupCollections(config) {
+  config.addCollection("work", (collection) => {
+    return sortByDisplayOrder(collection.getFilteredByGlob("src/work/*.md"));
+  });
+
+  config.addCollection("featuredWork", (collection) => {
+    return sortByDisplayOrder(
+      collection.getFilteredByGlob("src/work/*.md")
+        .filter(item => item.data.featured)
+    );
+  });
+}
 
 function setupLayouts(config) {
   config.addLayoutAlias("default", "layouts/default.html.njk");

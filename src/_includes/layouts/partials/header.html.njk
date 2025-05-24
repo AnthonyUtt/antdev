@@ -1,9 +1,9 @@
 <a class="visually-hidden" href="#main-content">Skip to main content</a>
 <header>
-  <div class="logo">logo</div>
+  <div>{% include "layouts/partials/brand.svg" %}</div>
   <nav>
     {% for link in site.navigation %}
-      <a href="{{ link.url }}">{{ link.text }}</a>
+      <a href="{{ link.url }}" {{ helpers.getLinkActiveState(link.url, page.url) | safe }}>{{ link.text }}</a>
     {% endfor %}
   </nav>
 </header>

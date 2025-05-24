@@ -1,9 +1,11 @@
 {% if useFullTitle == true %}
   {% set pageTitle = title %}
 {% else %}
-  {% capture pageTitle %}{{ title | append: " | " | append: site.name}}{% endcapture %}
+  {% set pageTitle %}
+    {{ [title, site.name] | join(" | ") }}
+  {% endset %}
 {% endif %}
-{% capture pageUrl %}{{ site.baseUrl | append: page.url }}{% endcapture %}
+{% set pageUrl %}{{ [site.baseUrl, page.url] | join }}{% endset %}
 
 <!DOCTYPE html>
 <html>
@@ -26,7 +28,7 @@
     <link rel="stylesheet" href="/styles/main.css">
   </head>
   <body>
-    {% include './partials/header' %}
+    {% include './partials/header.html.njk' %}
     {% block content %}{% endblock %}
   </body>
 </html>

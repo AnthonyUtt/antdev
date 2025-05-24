@@ -9,7 +9,7 @@ const BASE_CONFIG = {
   markdownTemplateEngine: "njk",
   dataTemplateEngine: "njk",
   htmlTemplateEngine: "njk",
-  templateFormats: ["html", "njk", "11ty.js"],
+  templateFormats: ["md", "html", "njk", "11ty.js"],
 };
 
 export default async function(config) {

@@ -14,12 +14,18 @@ importers:
       '@11ty/eleventy-fetch':
         specifier: ^5.1.0
         version: 5.1.0
+      '@11ty/eleventy-plugin-rss':
+        specifier: ^2.0.4
+        version: 2.0.4
       clean-css:
         specifier: ^5.3.3
         version: 5.3.3
       gorko:
         specifier: ^0.9.1
         version: 0.9.1
+      moment:
+        specifier: ^2.30.1
+        version: 2.30.1
       sass:
         specifier: ^1.85.0
         version: 1.85.0
@@ -44,6 +50,9 @@ packages:
   '@11ty/eleventy-plugin-bundle@3.0.1':
     resolution: {integrity: sha512-mskptUoN7PY+rv7DCH3ZwnvMc9aFBGEHHBjmlu+WGde6ySaa43qsLqjseX6RRijDILxp3EiYQ9XnDmmsSnoqIw==}
     engines: {node: '>=18'}
+
+  '@11ty/eleventy-plugin-rss@2.0.4':
+    resolution: {integrity: sha512-LF60sGVlxGTryQe3hTifuzrwF8R7XbrNsM2xfcDcNMSliLN4kmB+7zvoLRySRx0AQDjqhPTAeeeT0ra6/9zHUQ==}
 
   '@11ty/eleventy-utils@1.0.3':
     resolution: {integrity: sha512-nULO91om7vQw4Y/UBjM8i7nJ1xl+/nyK4rImZ41lFxiY2d+XUz7ChAj1CDYFjrLZeu0utAYJTZ45LlcHTkUG4g==}
@@ -629,6 +638,9 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
+  moment@2.30.1:
+    resolution: {integrity: sha512-uEmtNhbDOrWPFS+hdjFCBfy9f2YoyzRpwcl+DqpC6taX21FzsTLQVbMV/W7PzNSX6x/bhC1zA3c2UQ5NzH6how==}
+
   moo@0.5.2:
     resolution: {integrity: sha512-iSAJLHYKnX41mKcJKjqvnAN9sf0LMDTXDEvFv+ffuRR9a1MIuXLjMNL6EsnDHSkKLTWNqQQ5uo61P4EbU4NU+Q==}
 
@@ -935,6 +947,15 @@ snapshots:
       posthtml-match-helper: 2.0.3(posthtml@0.16.6)
     transitivePeerDependencies:
       - posthtml
+      - supports-color
+
+  '@11ty/eleventy-plugin-rss@2.0.4':
+    dependencies:
+      '@11ty/eleventy-utils': 2.0.7
+      '@11ty/posthtml-urls': 1.0.1
+      debug: 4.4.0
+      posthtml: 0.16.6
+    transitivePeerDependencies:
       - supports-color
 
   '@11ty/eleventy-utils@1.0.3':
@@ -1498,6 +1519,8 @@ snapshots:
   minipass@7.1.2: {}
 
   mkdirp@3.0.1: {}
+
+  moment@2.30.1: {}
 
   moo@0.5.2: {}
 

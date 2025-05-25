@@ -6,6 +6,8 @@
     "startYear": 2025,
     "owner": "My Company"
   },
+  "authorName": "Issue 33",
+  "authorEmail": "hi@piccalil.li",
   "navigation": [
     {
       "text": "Home",

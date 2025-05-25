@@ -1,6 +1,9 @@
 import path from 'path';
 import * as sass from 'sass';
+import rssPlugin from '@11ty/eleventy-plugin-rss';
 
+import dateFilter from './src/filters/date-filter.js';
+import w3DateFilter from './src/filters/w3-date-filter.js';
 import { sortByDisplayOrder } from './src/utils/collections.js';
 
 const BASE_CONFIG = {
@@ -15,6 +18,8 @@ const BASE_CONFIG = {
 };
 
 export default async function(config) {
+  setupPlugins(config);
+  setupFilters(config);
   setupLayouts(config);
   setupAssetPassthrough(config);
   setupSassPipeline(config);
@@ -35,6 +40,25 @@ function setupCollections(config) {
         .filter(item => item.data.featured)
     );
   });
+
+  config.addCollection("blog", (collection) => {
+    return [...collection.getFilteredByGlob("src/posts/*.md")].reverse();
+  });
+
+  config.addCollection('people', (collection) => {
+    return collection.getFilteredByGlob('src/people/*.md').sort((a, b) => {
+      return Number(a.fileSlug) > Number(b.fileSlug) ? 1 : -1;
+    });
+  });
+}
+
+function setupPlugins(config) {
+  config.addPlugin(rssPlugin);
+}
+
+function setupFilters(config) {
+  config.addFilter('dateFilter', dateFilter);
+  config.addFilter('w3DateFilter', w3DateFilter);
 }
 
 function setupLayouts(config) {

@@ -1,0 +1,33 @@
+@use '../functions' as *;
+
+.site-footer {
+  background: get-color('dark');
+  color: get-color('light');
+  padding: get-size('800') 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: get-size('600');
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: get-size('400');
+    }
+  }
+
+  svg {
+    &, & * {
+      fill: get-color('quinary-glare');
+    }
+  }
+
+}

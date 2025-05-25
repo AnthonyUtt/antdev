@@ -1,0 +1,43 @@
+{% if customTitle == true %}
+  {% assign pageTitle = title %}
+{% else %}
+  {% assign pageTitle = [title, site.name] | join: ' | ' %}
+{% endif %}
+
+{% assign siteTitle = site.name %}
+{% assign currentUrl = [site.url, page.url] | join %}
+
+{% comment %}
+If the page’s Front Matter has specific metaTitle and/or metaDesc items, switch 
+them into the mix.
+{% endcomment %}
+{% if metaTitle %}
+  {% assign pageTitle = metaTitle %}
+{% endif %}
+
+{% if not metaDesc %}
+  {% assign metaDesc = summary %}
+{% endif %}
+
+
+<title>{{ pageTitle }}</title>
+<link rel="canonical" href="{{ currentUrl }}" />
+
+<meta property="og:site_name" content="{{ siteTitle }}" />
+<meta property="og:title" content="{{ pageTitle }}" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ currentUrl }}" />
+
+{% if socialImage %}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:image" content="{{ socialImage }}" />
+  <meta name="twitter:image" content="{{ socialImage }}" />
+  <meta property="og:image:alt" content="Page image for {{ site.name }}" />
+  <meta name="twitter:image:alt" content="Page image for {{ site.name }}" />
+{% endif %}
+
+{% if metaDesc %}
+  <meta name="description" content="{{ metaDesc }}" />
+  <meta name="twitter:description" content="{{ metaDesc }}" />
+  <meta property="og:description" content="{{ metaDesc }}" />
+{% endif %}

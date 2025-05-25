@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="googlebot-news" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="generator" content="{{ eleventy.generator }}">
+
+    {% include 'partials/metadata' %}
+
+    <link rel="stylesheet" href="/styles/main.css?{% assetHash %}">
+  </head>
+  <body class="site-wrap">
+    {% include 'partials/site-header' %}
+    {% block content %}{% endblock %}
+    {% include 'partials/site-footer' %}
+  </body>
+</html>

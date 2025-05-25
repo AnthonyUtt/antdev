@@ -6,12 +6,15 @@
 
 @use 'reset';
 @use 'utilities';
+@use 'blocks';
 
 :root {
   --flow-space: #{get-size('600')};
 }
 
 body {
+  margin: 0;
+  padding: 0;
 	background: get-color('light');
 	color: get-color('dark-shade');
 	line-height: 1.5;

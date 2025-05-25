@@ -2,8 +2,8 @@ import path from 'path';
 import * as sass from 'sass';
 import rssPlugin from '@11ty/eleventy-plugin-rss';
 
-import dateFilter from './src/filters/date-filter.js';
-import w3DateFilter from './src/filters/w3-date-filter.js';
+import initFilters from './src/filters/index.js';
+import initShortcodes from './src/shortcodes/index.js';
 import { sortByDisplayOrder } from './src/utils/collections.js';
 
 const BASE_CONFIG = {
@@ -11,25 +11,26 @@ const BASE_CONFIG = {
     input: "src",
     output: "public",
   },
-  markdownTemplateEngine: "njk",
-  dataTemplateEngine: "njk",
-  htmlTemplateEngine: "njk",
-  templateFormats: ["md", "html", "njk", "11ty.js"],
+  markdownTemplateEngine: "liquid",
+  dataTemplateEngine: "liquid",
+  htmlTemplateEngine: "liquid",
+  templateFormats: ["md", "html", "liquid", "11ty.js"],
 };
 
 export default async function(config) {
+  initFilters(config);
+  initShortcodes(config);
+
   setupPlugins(config);
-  setupFilters(config);
-  setupLayouts(config);
   setupAssetPassthrough(config);
   setupSassPipeline(config);
 
-  setupCollections(config);
+  addCollections(config);
 
   return BASE_CONFIG;
 };
 
-function setupCollections(config) {
+function addCollections(config) {
   config.addCollection("work", (collection) => {
     return sortByDisplayOrder(collection.getFilteredByGlob("src/work/*.md"));
   });
@@ -54,16 +55,6 @@ function setupCollections(config) {
 
 function setupPlugins(config) {
   config.addPlugin(rssPlugin);
-}
-
-function setupFilters(config) {
-  config.addFilter('dateFilter', dateFilter);
-  config.addFilter('w3DateFilter', w3DateFilter);
-}
-
-function setupLayouts(config) {
-  config.addLayoutAlias("default", "layouts/default.html.njk");
-  config.addLayoutAlias("article", "layouts/article.html.njk");
 }
 
 function setupAssetPassthrough(config) {

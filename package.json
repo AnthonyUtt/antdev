@@ -17,8 +17,9 @@
     "@11ty/eleventy-fetch": "^5.1.0",
     "@11ty/eleventy-plugin-rss": "^2.0.4",
     "clean-css": "^5.3.3",
+    "get-google-fonts": "^1.2.2",
     "gorko": "^0.9.1",
     "moment": "^2.30.1",
-    "sass": "^1.85.0"
+    "sass": "^1.89.0"
   }
 }

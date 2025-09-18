@@ -1,0 +1,49 @@
+@use '../functions' as *;
+@use '../mixins' as *;
+
+$toggle-size: get-size('500');
+$toggle-padding: 4px;
+
+input[type="checkbox"].theme-toggle {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+label.toggle-label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: $toggle-size * 2;
+  height: $toggle-size;
+  background: get-color('primary');
+  display: block;
+  border-radius: $toggle-size;
+  position: relative;
+}
+
+label.toggle-label:after {
+  $width: calc(#{$toggle-size} - #{$toggle-padding * 2});
+  content: '';
+  position: absolute;
+  top: $toggle-padding;
+  left: $toggle-padding;
+  width: $width;
+  height: $width;
+  border-radius: $width;
+
+  @include transition-all(linear);
+  @include apply-theme-color('background', get-color('light'), get-color('dark'));
+}
+
+input[type="checkbox"].theme-toggle:checked + label.toggle-label {
+  background: get-color('secondary');
+}
+
+input.theme-toggle:checked + label.toggle-label:after {
+  left: calc(100% - $toggle-padding);
+  transform: translateX(-100%);
+}
+
+label.toggle-label:active:after {
+  width: $toggle-size;
+}

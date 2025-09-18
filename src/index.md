@@ -1,7 +1,5 @@
 ---
-layout: layouts/page
-title: Hello, world!
+layout: pages/homepage
+title: Web Design and Digital Marketing in the Roanoke Valley
 customTitle: true
 ---
-
-Page content goes here.

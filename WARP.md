@@ -2,114 +2,118 @@
 
 This file provides guidance to WARP (warp.dev) when working with code in this repository.
 
-## Project Overview
+## About This Project
 
-This is an Eleventy (11ty) v3.0 static site generator starter project using:
-- **Build System**: Eleventy with ES modules (`"type": "module"`)
-- **Package Manager**: pnpm (v10.16.1)
-- **Templating**: Liquid templates
-- **Styling**: Sass/SCSS with a custom utility-first CSS framework (Gorko)
-- **Content**: Markdown with front matter
+This is a marketing site for antdev, a software shop based in Roanoke, VA. The site is built with Eleventy.js and is based on the [web-starter template](https://github.com/AnthonyUtt/web-starter). It uses pnpm as the package manager and has Nix flake support for reproducible development environments.
 
-## Common Development Commands
+## Essential Commands
 
+### Development
+```bash
+# Start development server with hot reload
+pnpm start
+# or
+pnpm run serve
+
+# Build the site for production
+pnpm run build
+# or
+eleventy
+```
+
+### Nix Development Environment
+```bash
+# Enter Nix development shell (auto-installs deps)
+nix develop
+
+# Build using Nix
+nix build
+```
+
+### Package Management
 ```bash
 # Install dependencies
 pnpm install
 
-# Start development server with hot reload
-pnpm start
+# Add new dependency
+pnpm add <package-name>
 
-# Alternative development server
-pnpm run serve
-
-# Build for production
-pnpm run build
-
-# Direct Eleventy commands
-eleventy --serve      # Development server
-eleventy             # Production build
+# Add dev dependency
+pnpm add --dev <package-name>
 ```
 
-## Project Architecture
+## Architecture & Structure
+
+### Core Architecture
+- **Static Site Generator**: Eleventy.js v3
+- **Template Engine**: Liquid (for Markdown, HTML, and data)
+- **Styling**: Sass/SCSS with custom pipeline
+- **Package Manager**: pnpm with lock file
+- **Build System**: Eleventy with custom extensions and plugins
+
+### Key Configuration Files
+- `eleventy.config.js` - Main Eleventy configuration with plugins, collections, and Sass pipeline
+- `package.json` - Dependencies and npm scripts
+- `flake.nix` - Nix development environment with Node.js 22 and pnpm
+- `src/_data/site.json` - Site metadata and navigation configuration
 
 ### Directory Structure
-- `src/` - Source files (input directory)
-- `public/` - Built output (output directory) 
-- `eleventy.config.js` - Main Eleventy configuration file
+```
+src/
+├── _data/           # Global data files (site.json, helpers, etc.)
+├── filters/         # Eleventy filters (date formatting, etc.)
+├── shortcodes/      # Eleventy shortcodes (asset hashing, navigation)
+├── styles/          # Sass/SCSS files (_config, _reset, main)
+├── utils/           # Utility functions (collections sorting)
+└── *.md, *.html     # Pages and templates
+```
 
-### Key Architecture Patterns
-
-#### Template System (Liquid)
-- **Base Layout**: `src/_includes/layouts/_base.liquid` - Main HTML wrapper
-- **Page Layout**: `src/_includes/layouts/page.liquid` - Content pages wrapper
-- **Partials**: `src/_includes/partials/` - Reusable components (header, footer, navigation, metadata, pagination, RSS)
-
-#### Data & Configuration
-- `src/_data/site.json` - Site-wide configuration (name, URL, navigation, author info)
-- `src/_data/global.js` - JavaScript-based global data (random ID generation)
-- `src/_data/helpers.js` - Helper functions for templates
-
-#### Custom Eleventy Extensions
-
-**Filters** (`src/filters/`):
-- Date formatting filters for display and W3C compliance
-- Centrally registered in `src/filters/index.js`
-
-**Shortcodes** (`src/shortcodes/`):
-- Asset hash generation for cache busting
-- Active link state detection for navigation
-- Centrally registered in `src/shortcodes/index.js`
-
-**Collections** (defined in `eleventy.config.js`):
-- `work` - Portfolio/work items sorted by display order
+### Collections System
+The site uses Eleventy collections for content organization:
+- `work` - Work portfolio items (sorted by displayOrder)
 - `featuredWork` - Featured work items only
-- `blog` - Blog posts in reverse chronological order
-- `people` - People sorted by filename number
+- `blog` - Blog posts (reverse chronological)
+- `people` - Team/people pages (sorted by file slug number)
 
-#### Styling Architecture (Gorko Framework)
-- **Main Entry**: `src/styles/main.scss`
-- **Configuration**: `src/styles/_config.scss` - Design tokens (colors, sizes, fonts, breakpoints)
-- **Utility Generation**: Automatic utility class generation from configuration
-- **Design System**:
-  - Perfect Fourth scale for sizing (`300` to `major`)
-  - Color palette with shades/glares for each color
-  - Responsive breakpoints (`md`: 37em, `lg`: 62em)
-  - Typography scale with custom font stacks
+### Custom Extensions
+- **Sass Pipeline**: Compiles `.scss` files to `.css` with dependency tracking
+- **Asset Passthrough**: Copies `src/assets` to build output
+- **RSS Plugin**: Generates RSS feeds for blog content
 
-**SCSS Organization**:
-- `functions/` - Sass functions for accessing design tokens
-- `mixins/` - Sass mixins including utility application and media queries  
-- `utilities/` - Utility classes (flow, panel, wrapper, etc.)
-- `blocks/` - Component styles (navigation, header, footer)
+### Template System
+- Uses Liquid templating for all content types
+- Custom shortcodes for asset hashing and navigation state
+- Date filters for formatting timestamps
+- Content is organized with frontmatter metadata including `displayOrder` and `featured` flags
 
-#### Build Pipeline Features
-- **Sass Compilation**: Custom Sass processor with dependency tracking
-- **Asset Passthrough**: Direct copy of `src/assets/` to output
-- **Template Formats**: Markdown, HTML, Liquid, and 11ty.js files
-- **RSS Plugin**: Built-in RSS feed generation capability
+### Build Process
+1. Eleventy processes templates and content from `src/` directory
+2. Sass files are compiled with custom pipeline (ignoring `_` prefixed files)
+3. Assets are copied through passthrough
+4. Output is generated in `public/` directory
 
-### Development Patterns
+## Development Notes
 
-#### Content Creation
-- Pages use Markdown with YAML front matter
-- Layout specified via `layout: layouts/page` in front matter
-- Custom title handling with `customTitle: true` option
+### Content Management
+- Work portfolio items should include `displayOrder` for sorting
+- Use `featured: true` in frontmatter to include in featured work collection
+- Blog posts are automatically sorted by date (newest first)
+- People pages are sorted numerically by filename
 
-#### Styling Approach
-- Utility-first CSS generated from design tokens in `_config.scss`
-- Component styles in `blocks/` directory
-- Consistent spacing via CSS custom properties and utility classes
-- Responsive design through breakpoint-based utilities
+### Styling
+- Main Sass entry point is `src/styles/main.scss`
+- Partial files should be prefixed with `_` and won't be compiled directly
+- Sass compilation includes dependency tracking for proper rebuilds
 
-#### JavaScript Integration
-- ES modules throughout (`import`/`export`)
-- Node.js utilities in `src/utils/` for collections and data processing
-- Client-side assets handled through passthrough copying
+### Adding New Features
+- Filters: Add to `src/filters/index.js` and create individual filter files
+- Shortcodes: Add to `src/shortcodes/index.js` and create individual shortcode files
+- Collections: Define in `eleventy.config.js` using glob patterns
+- Utilities: Add to `src/utils/` and import as needed
 
-## Development Tips
+## Environment Setup
 
-- The design system uses a Perfect Fourth scale - reference `_config.scss` for exact values
-- Utility classes are auto-generated - check the compiled CSS or configuration to see available classes
-- Collections are pre-configured for common content types (work, blog, people)
-- The asset hash shortcode ensures proper cache busting in production
+The project supports both traditional Node.js development and Nix-based development:
+
+**Traditional**: Requires Node.js 22+ and pnpm
+**Nix**: Run `nix develop` for automatic environment setup with all dependencies

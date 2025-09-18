@@ -1,12 +1,19 @@
 @use '../functions' as *;
+@use '../mixins' as *;
 
 .site-header {
-  height: get-size('700');
+  height: get-size('900');
 
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
+  a.header-logo {
+    flex: 1 1;
+
+    svg.logo { height: get-size('700'); }
+  }
 
   nav {
     display: flex;
@@ -16,7 +23,8 @@
     gap: get-size('400');
 
     line-height: 1;
-    font-weight: 900;
+    @include apply-utility('font', 'accent');
+    @include apply-utility('text', '500');
     
     a {
       text-decoration: none;
@@ -34,7 +42,7 @@
           top: 100%;
           left: 0;
           margin-top: 0.25rem;
-          background: get-color('quinary-shade');
+          background: get-color('secondary-glare');
         }
       }
     }

@@ -1,24 +1,28 @@
 {
-  "name": "My Site",
-  "baseUrl": "https://example.com",
-  "description": "A description of my site",
+  "name": "AntDev",
+  "baseUrl": "https://antdev.sh",
+  "description": "Web design and digital marketing in the Roanoke Valley. Results-driven, professional websites optimized to convert visitors into paying customers.",
   "copyright": {
     "startYear": 2025,
-    "owner": "My Company"
+    "owner": "AntDev, LLC"
   },
-  "authorName": "A. A. Aaron",
-  "authorEmail": "aaa@example.com",
+  "authorName": "AntDev Team",
+  "authorEmail": "hello@antdev.sh",
   "navigation": [
     {
-      "text": "Home",
+      "text": "home",
       "url": "/"
     },
     {
-      "text": "About",
+      "text": "about",
       "url": "/about/"
     },
     {
-      "text": "Contact",
+      "text": "portfolio",
+      "url": "/portfolio/"
+    },
+    {
+      "text": "contact",
       "url": "/contact/"
     }
   ]

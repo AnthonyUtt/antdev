@@ -1,0 +1,155 @@
+{% layout 'layouts/page' %}
+
+{% block content %}
+<main class="[ wrapper flow ]" id="main-content" tabindex="-1">
+  <section class="[ hero ]">
+    <div class="[ hero__content ] [ flow ]">
+      <h1 class="[ hero__title ]">web design and digital marketing in the roanoke valley</h1>
+      <p class="[ hero__subtitle ]">Results-driven, professional websites that are optimized to convert more of your visitors into paying customers.</p>
+      <a href="/contact/" class="[ hero__cta] [ button button--secondary ]">Schedule Your Free Consultation Now</a>
+    </div>
+    <div class="[ hero__image ]">
+      {% include 'partials/hero.svg' %}
+    </div>
+  </section>
+  <section class="[ process ]">
+    <h2 class="[ process__title ]">start growing your business in 3 simple steps</h2>
+    <div class="[ process__steps ]">
+      <div class="[ process__step ]">
+        <div class="[ process__icon ]">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <p class="[ process__description ]">Reach out to us for a free consultation. We will discuss your business needs and goals, and provide a strategy tailored to your business.</p>
+      </div>
+      <div class="[ process__step ]">
+        <div class="[ process__icon ]">
+          <svg viewBox="0 0 30 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="4" width="24" height="18" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
+            <line x1="3" y1="10" x2="27" y2="10" stroke="currentColor" stroke-width="2"/>
+            <line x1="10" y1="10" x2="10" y2="22" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </div>
+        <p class="[ process__description ]">After understanding your needs, we will create a professional and optimized website mockup. The design will be implemented to convert visitors into customers.</p>
+      </div>
+      <div class="[ process__step ]">
+        <div class="[ process__icon ]">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="16,18 22,12 16,6" stroke="currentColor" stroke-width="2" fill="none"/>
+            <polyline points="8,6 2,12 8,18" stroke="currentColor" stroke-width="2" fill="none"/>
+          </svg>
+        </div>
+        <p class="[ process__description ]">Once you are satisfied with the design, we will finalize the details and start the building process. Your new website will be ready to attract and convert customers in no time.</p>
+      </div>
+    </div>
+  </section>
+  <section class="[ funnel ]">
+    <div class="[ funnel__background ]"></div>
+    <div class="[ funnel__container ]">
+      <h3 class="[ funnel__title ]">a website isn't just a business card, it's the top of your sales funnel</h3>
+      <div class="[ funnel__content ]">
+        <div class="[ funnel__text ] [ flow ]">
+          <p>Your website is more than just some information about your brand - it’s a vital part of your sales funnel. With our strategic designs and carefully-crafted content, we will transform your website into a lead generation tool.</p>
+          <p>By attracting potential customers, capturing their interest, and guiding them toward conversion, your website can become a driving force behind your business’ growth. At AntDev, we focus on creating an engaging user experience that encourages users to take the next step, whether that is scheduling a consultation, purchasing your product, or signing up for your services.</p>
+          <p>But it's not just about getting users to your site. It's about keeping them there and guiding them through your sales funnel. We use proven design principles and conversion strategies to keep your visitors engaged, increasing the chances that they will become paying customers.</p>
+          <p>In a digital world, your website is the first interaction consumers have with your brand. Don't let a poor design deter potential customers. Let us build a website that reflects the quality of your business and leads to measurable growth.</p>
+          <p>Remember, a great website doesn't just happen. It's built. It's strategized. And with our team, it's optimized to convert.</p>
+        </div>
+        <div class="[ funnel__image ]">
+          {% include 'partials/funnel.svg' %}
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="[ testimonials ]">
+    <h3 class="[ testimonials__title ]">don't take our word for it</h3>
+    <div class="[ testimonials__slider ]">
+      <div class="[ testimonials__item ]">
+        <div class="[ testimonials__avatar ]">
+          <img src="/assets/images/testimonial-avatar.svg" alt="Client testimonial">
+        </div>
+        <blockquote class="[ testimonials__quote ]">
+          Working with AntDev was a game-changing decision for our business. They didn't just create a website—they crafted a powerful lead generation system that significantly boosted our traffic and conversions. The results speak for themselves, and we're thrilled with the impact on our bottom line. I'd recommend AntDev to anyone looking to elevate their online presence.
+        </blockquote>
+      </div>
+    </div>
+  </section>
+  <section class="[ cta ]">
+    <div class="[ cta__content ] [ flow ]">
+      <h2 class="[ cta__title ]">ready to supercharge your site?</h2>
+      <p class="[ cta__text ]">Our team will transform your website into a results-driven powerhouse that converts visitors into paying customers with streamlined UX, compelling content, and optimized performance.</p>
+      <a href="/contact/" class="[ cta__button ] [ button button--secondary ]">Schedule Your Free Consultation Today</a>
+    </div>
+  </section>
+  <section class="faq">
+    <h2 class="faq__title">frequently asked questions</h2>
+    <div class="faq__items">
+      <div class="faq__item">
+        <button class="faq__question" type="button" aria-expanded="false">
+          What kind of businesses do you work with?
+          <span class="faq__toggle" aria-hidden="true"></span>
+        </button>
+        <div class="faq__answer">
+          <p>We work with businesses of all sizes across various industries, from small local businesses to established companies looking to expand their digital presence.</p>
+        </div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__question" type="button" aria-expanded="false">
+          How long does it take to design and launch a new website?
+          <span class="faq__toggle" aria-hidden="true"></span>
+        </button>
+        <div class="faq__answer">
+          <p>Timeline varies based on project complexity, but most websites are completed within 4-8 weeks from initial consultation to launch.</p>
+        </div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__question" type="button" aria-expanded="false">
+          Do you offer ongoing support after the website is launched?
+          <span class="faq__toggle" aria-hidden="true"></span>
+        </button>
+        <div class="faq__answer">
+          <p>Yes, we provide ongoing maintenance and support packages to ensure your website stays secure, up-to-date, and performing optimally.</p>
+        </div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__question" type="button" aria-expanded="false">
+          What is the cost of designing and building a custom website?
+          <span class="faq__toggle" aria-hidden="true"></span>
+        </button>
+        <div class="faq__answer">
+          <p>Website costs vary based on features and complexity. We provide custom quotes after understanding your specific needs and goals.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const faqItems = document.querySelectorAll('.faq__item');
+  
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq__question');
+    const answer = item.querySelector('.faq__answer');
+    
+    question.addEventListener('click', () => {
+      const isOpen = question.getAttribute('aria-expanded') === 'true';
+      
+      // Close all other items
+      faqItems.forEach(otherItem => {
+        const otherQuestion = otherItem.querySelector('.faq__question');
+        const otherAnswer = otherItem.querySelector('.faq__answer');
+        otherQuestion.setAttribute('aria-expanded', 'false');
+        otherAnswer.style.maxHeight = null;
+      });
+      
+      // Toggle current item
+      if (!isOpen) {
+        question.setAttribute('aria-expanded', 'true');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+});
+</script>
+{% endblock %}

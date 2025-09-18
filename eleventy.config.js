@@ -58,7 +58,8 @@ function setupPlugins(config) {
 }
 
 function setupAssetPassthrough(config) {
-  config.addPassthroughCopy("src/assets");
+  config.addPassthroughCopy('src/assets');
+  config.addPassthroughCopy({ 'src/static': '.' })
 }
 
 function setupSassPipeline(config) {

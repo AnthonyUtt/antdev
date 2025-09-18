@@ -1,0 +1,37 @@
+@use '../functions' as *;
+@use '../mixins' as *;
+
+.sticky-button {
+  $margin: get-size('300');
+  $size: get-size('700');
+
+  position: fixed;
+  bottom: $margin;
+  right: $margin;
+  width: $size;
+  aspect-ratio: 1;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  color: white;
+
+  @include transition;
+  @include apply-theme-color('background', get-color('primary-glare'), get-color('secondary'));
+
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @include transition-opacity;
+
+    &.sun { opacity: 0; }
+    &.moon { opacity: 1; }
+
+    html.dark & {
+      &.sun { opacity: 1; }
+      &.moon { opacity: 0; }
+    }
+  }
+}

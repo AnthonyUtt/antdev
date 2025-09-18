@@ -1,0 +1,4 @@
+@mixin apply-theme-color($property, $light, $dark) {
+  #{$property}: $light;
+  html.dark & { #{$property}: $dark; }
+}

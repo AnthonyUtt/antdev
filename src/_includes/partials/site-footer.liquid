@@ -1,6 +1,19 @@
+{% assign owner = site.copyright.owner %}
+{% assign start_year = site.copyright.startYear %}
+{% assign current_year = "now" | date: "%Y" | to_integer %}
+
+{% if start_year < current_year %}
+  {% capture year %}{{ start_year }} - {{ current_year }}{% endcapture %}
+{% else %}
+  {% assign year = current_year %}
+{% endif %}
+
 <footer class="site-footer">
   <div class="site-footer__content">
-    {% include 'partials/logo.svg' %}
+    {% include 'partials/logo-minimal.svg' %}
     {% include 'partials/navigation-links' %}
   </div>
+  <span id="copyright">
+    © {{ year }} {{ owner }}. All Rights Reserved.
+  </span>
 </footer>

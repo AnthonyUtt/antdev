@@ -1,0 +1,86 @@
+@use '../../functions' as *;
+@use '../../mixins' as *;
+
+.faq {
+  max-width: 768px;
+  margin-inline: auto;
+
+  &__title {
+    font-size: get-size('700');
+    font-weight: 700;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+  
+  &__item {
+    border-bottom: 1px solid get-color('light-shade');
+    
+    &:last-of-type {
+      border-bottom: none;
+    }
+  }
+  
+  &__question {
+    width: 100%;
+    padding: 1.5rem 0;
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: get-size('500');
+    font-weight: 600;
+    @include apply-utility('font', 'accent');
+    @include apply-theme-color('color', get-color('dark'), get-color('light'));
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    &:hover {
+      color: get-color('secondary');
+    }
+  }
+  
+  &__toggle {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    flex-shrink: 0;
+    margin-left: 1rem;
+    
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 16px;
+      height: 2px;
+      background: currentColor;
+      transform: translate(-50%, -50%);
+      transition: all 0.3s ease;
+    }
+    
+    &::after {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+  }
+  
+  &__question[aria-expanded="true"] &__toggle::after {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  
+  &__answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    
+    p {
+      padding: 0 0 1.5rem 1.5rem;
+      font-size: get-size('400');
+      line-height: 1.6;
+      margin: 0;
+      text-wrap: auto;
+    }
+  }
+}

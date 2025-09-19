@@ -1,7 +1,7 @@
-@use '../functions' as *;
-@use '../mixins' as *;
+@use '../../functions' as *;
+@use '../../mixins' as *;
 
-.site-footer {
+.footer {
   position: relative;
   padding: get-size('800') 0;
   display: flex;

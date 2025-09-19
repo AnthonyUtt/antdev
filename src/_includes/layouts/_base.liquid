@@ -11,13 +11,13 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-    {% include 'partials/metadata' %}
-    {% include 'partials/assets' %}
+    {% include 'partials/site/metadata' %}
+    {% include 'partials/site/assets' %}
   </head>
   <body class="site-wrap">
-    {% include 'partials/site-header' %}
+    {% include 'partials/site/header' %}
     {% block content %}{% endblock %}
-    {% include 'partials/site-footer' %}
-    {% include 'partials/sticky-button' %}
+    {% include 'partials/site/footer' %}
+    {% include 'partials/components/sticky-button' %}
   </body>
 </html>

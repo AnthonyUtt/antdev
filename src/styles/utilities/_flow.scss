@@ -1,7 +1,18 @@
+@use '../functions' as *;
+@use '../mixins' as *;
+
 /**
  * FLOW
  * Applies a margin to sibling elements based on a --flow-space custom property.
  */
 .flow > * + * {
   margin-top: var(--flow-space, get-size('600'));
+}
+
+.section-flow > * + * {
+  margin-block: var(--flow-space, get-size('600'));
+
+  @include media-query('md') {
+    margin-block: get-size('major');
+  }
 }

@@ -1,5 +1,5 @@
-@use '../functions' as *;
-@use '../mixins' as *;
+@use '../../functions' as *;
+@use '../../mixins' as *;
 
 svg.logo .logo-letter {
   @include apply-theme-color('fill', get-color('primary'), get-color('secondary'));

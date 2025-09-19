@@ -1,16 +1,17 @@
-@use '../functions' as *;
-@use '../mixins' as *;
+@use '../../functions' as *;
+@use '../../mixins' as *;
 
-.site-header {
+.header {
   height: get-size('900');
 
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  gap: 0.25rem;
 
   a.header-logo {
-    flex: 1 1;
+    flex: 1;
 
     svg.logo { height: get-size('700'); }
   }

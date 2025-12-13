@@ -11,7 +11,9 @@
 <footer class="footer">
   <div class="footer__content">
     {% include 'partials/svg/logo-minimal.svg' %}
-    {% include 'partials/site/navigation-links' %}
+    <nav class="[ footer__nav ]">
+      {% include "partials/site/navigation-links" %}
+    </nav>
   </div>
   <span id="copyright">
     © {{ year }} {{ owner }}. All Rights Reserved.

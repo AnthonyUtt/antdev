@@ -1,0 +1,162 @@
+@use '../../functions' as *;
+@use '../../mixins' as *;
+
+// Generic carousel component styles
+.carousel {
+  position: relative;
+  overflow: hidden;
+
+  &__container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-inline: get-size('400');
+  }
+
+  &__track {
+    position: relative;
+    cursor: grab;
+    user-select: none;
+    touch-action: pan-y;
+    min-height: 300px;
+
+    &:active {
+      cursor: grabbing;
+    }
+  }
+
+  &__slide {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    @include transition-all(cubic-bezier(0.4, 0, 0.2, 1), 500ms);
+
+    // Position states for slide transitions
+    &[data-position="active"] {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+      pointer-events: auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    &[data-position="prev"] {
+      opacity: 0;
+      transform: translateX(-100%) scale(0.95);
+      z-index: 1;
+    }
+
+    &[data-position="next"] {
+      opacity: 0;
+      transform: translateX(100%) scale(0.95);
+      z-index: 1;
+    }
+
+    &[data-position="hidden"] {
+      opacity: 0;
+      transform: translateX(0) scale(0.95);
+      z-index: 0;
+    }
+  }
+
+  // Navigation controls
+  &__controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: get-size('500');
+    margin-top: get-size('600');
+
+    @include media-query('md') {
+      gap: get-size('700');
+      margin-top: get-size('700');
+    }
+  }
+
+  &__button {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid;
+    @include apply-theme-color('border-color', get-color('dark-glare'), get-color('light-shade'));
+    @include apply-theme-color('background', transparent, transparent);
+    @include apply-theme-color('color', get-color('dark'), get-color('light'));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    @include transition-all(cubic-bezier(0.4, 0, 0.2, 1), 200ms);
+    flex-shrink: 0;
+
+    @include media-query('md') {
+      width: 56px;
+      height: 56px;
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+      pointer-events: none;
+    }
+
+    &:hover:not(:disabled) {
+      @include apply-theme-color('background', get-color('secondary'), get-color('secondary-glare'));
+      @include apply-theme-color('border-color', get-color('secondary'), get-color('secondary-glare'));
+      color: white;
+      transform: scale(1.1);
+    }
+
+    &:focus-visible {
+      outline: 3px solid get-color('secondary');
+      outline-offset: 2px;
+    }
+
+    &:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+  }
+
+  &__dots {
+    display: flex;
+    gap: get-size('300');
+    align-items: center;
+  }
+
+  &__dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid;
+    @include apply-theme-color('border-color', get-color('dark-glare'), get-color('light-shade'));
+    @include apply-theme-color('background', transparent, transparent);
+    padding: 0;
+    cursor: pointer;
+    @include transition-all(cubic-bezier(0.4, 0, 0.2, 1), 200ms);
+
+    @include media-query('md') {
+      width: 14px;
+      height: 14px;
+    }
+
+    &:hover {
+      @include apply-theme-color('background', get-color('secondary-shade'), get-color('secondary'));
+      @include apply-theme-color('border-color', get-color('secondary-shade'), get-color('secondary'));
+      transform: scale(1.3);
+    }
+
+    &:focus-visible {
+      outline: 2px solid get-color('secondary');
+      outline-offset: 4px;
+    }
+
+    &[aria-selected="true"] {
+      @include apply-theme-color('background', get-color('secondary'), get-color('secondary-glare'));
+      @include apply-theme-color('border-color', get-color('secondary'), get-color('secondary-glare'));
+      transform: scale(1.2);
+    }
+  }
+}

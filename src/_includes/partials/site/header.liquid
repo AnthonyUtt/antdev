@@ -3,6 +3,13 @@
   <a class="[ header-logo ]" href="/">
     {% include "partials/svg/logo.svg" %}
   </a>
-  {% include "partials/site/navigation-links" %}
+  <nav class="[ header__nav ]">
+    {% include "partials/site/navigation-links" %}
+  </nav>
   {% include "partials/components/theme-toggle" %}
+  <button class="[ header__hamburger ]" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
+    <span class="[ header__hamburger-line ]"></span>
+    <span class="[ header__hamburger-line ]"></span>
+    <span class="[ header__hamburger-line ]"></span>
+  </button>
 </header>

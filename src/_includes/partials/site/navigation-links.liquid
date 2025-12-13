@@ -1,5 +1,3 @@
-<nav>
-  {% for link in site.navigation %}
-    <a class="nav-link" href="{{ link.url }}" {% getLinkActiveState link.url, page.url %}>{{ link.text }}</a>
-  {% endfor %}
-</nav>
+{% for link in site.navigation %}
+  <a class="nav-link" href="{{ link.url }}" {% getLinkActiveState link.url, page.url %}>{{ link.text }}</a>
+{% endfor %}

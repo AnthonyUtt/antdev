@@ -1,0 +1,31 @@
+{
+  "items": [
+    {
+      "id": "testimonial-1",
+      "name": "Sarah Mitchell",
+      "title": "Owner",
+      "company": "Mitchell Hardware",
+      "location": "Roanoke, VA",
+      "quote": "Working with AntDev transformed our business. They built us a modern website that actually brings in customers, and their ongoing support has been invaluable. Their local presence means we can meet face-to-face, which we really appreciate.",
+      "avatar": "/assets/images/testimonial-avatar.svg"
+    },
+    {
+      "id": "testimonial-2",
+      "name": "James Patterson",
+      "title": "Operations Manager",
+      "company": "Valley Manufacturing Co.",
+      "location": "Salem, VA",
+      "quote": "The automation solution AntDev created saved us countless hours every week. What used to take our team 2 days now happens automatically. They took the time to understand our processes and delivered exactly what we needed.",
+      "avatar": "/assets/images/testimonial-avatar.svg"
+    },
+    {
+      "id": "testimonial-3",
+      "name": "Emily Rodriguez",
+      "title": "Director",
+      "company": "Blue Ridge Consulting",
+      "location": "Blacksburg, VA",
+      "quote": "AntDev modernized our legacy system and the difference is night and day. Our staff is more productive, our clients are happier, and we're finally positioned to scale. Best technology investment we've made.",
+      "avatar": "/assets/images/testimonial-avatar.svg"
+    }
+  ]
+}

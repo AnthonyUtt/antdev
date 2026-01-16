@@ -3,6 +3,7 @@
 {% block content %}
 <main class="[ wrapper section-flow ]" id="main-content" tabindex="-1">
   <section class="[ hero ]">
+    <div class="[ hero__background ]" id="hero-dot-grid"></div>
     <div class="[ hero__content ] [ flow ]">
       <h1 class="[ hero__title ]">technology solutions for roanoke valley businesses</h1>
       <p class="[ hero__subtitle ]">From custom websites to software automation and legacy system modernization, we help local businesses use technology effectively. Based in Roanoke, serving Southwest Virginia.</p>
@@ -208,6 +209,25 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const container = document.getElementById('hero-dot-grid');
+  if (container && typeof DotGrid !== 'undefined') {
+    new DotGrid(container, {
+      dotSize: 5,
+      gap: 15,
+      baseColor: '#552e84',
+      activeColor: '#552e84',
+      opacity: 0.2,
+      proximity: 120,
+      shockRadius: 250,
+      shockStrength: 5,
+      resistance: 750,
+      returnDuration: 1.5,
+    });
+  }
 });
 </script>
 {% endblock %}

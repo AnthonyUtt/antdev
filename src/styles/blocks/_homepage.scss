@@ -5,16 +5,12 @@
 /* Hero Section */
 .hero {
   position: relative;
+  width: 100%;
+  height: calc(100vh - 15rem);
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-block: get-size('500');
-
-  @include media-query('md') {
-    flex-direction: row;
-    padding-block: get-size('major');
-  }
 
   &__background {
     position: absolute;
@@ -26,7 +22,6 @@
   &__content {
     position: relative;
     z-index: 1;
-    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,29 +33,36 @@
     font-weight: 400;
     line-height: 1.2;
     text-wrap: balance;
+
+    @include media-query('md') {
+      font-size: get-size('900');
+      max-width: 1200px;
+    }
   }
   
   &__subtitle {
     @include apply-utility('text', '400');
-    @include apply-utility('measure', 'short');
+    @include apply-utility('measure', 'medium');
+    @include apply-theme-color('background', rgba(get-color('light'), 0.5), rgba(get-color('dark'), 0.5));
     text-wrap: balance;
+
+    @include media-query('md') {
+      @include apply-utility('text', '500');
+    }
   }
   
   &__cta {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
   }
-  
-  &__image {
-    position: relative;
-    z-index: 1;
-    flex: 1;
-    max-width: 100%;
-    
-    svg {
-      width: 100%;
-      height: auto;
-      max-width: 500px;
-    }
+
+  &__subtext {
+    @include apply-utility('text', '300');
+    @include apply-utility('measure', 'short');
+    @include apply-theme-color('background', get-color('light'), get-color('dark'));
   }
 }
 
@@ -74,192 +76,541 @@
   pointer-events: none;
 }
 
-/* Process Section */
-.process {
-  padding-block: get-size('300');
+/* Services Section */
+.services {
+  padding-block: get-size('400');
 
   @include media-query('md') {
-    padding-block: get-size('500')
+    padding-block: get-size('600');
   }
-  
+
   &__title {
     text-align: center;
     font-size: get-size('700');
     font-weight: 700;
-    margin-bottom: 4rem;
+    margin-bottom: get-size('600');
     line-height: 1.3;
   }
-  
+
   &__steps {
+    // Mobile: horizontal scrolling carousel
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    gap: get-size('400');
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: get-size('400');
+    margin-inline: calc(-1 * get-size('400'));
+    padding-inline: get-size('400');
+
+    // Hide scrollbar while maintaining functionality
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
     @include media-query('md') {
-      flex-direction: row;
-      align-items: flex-start;
-    }
-  }
-  
-  &__step {
-    text-align: center;
-    padding: 2rem 1rem;
-    @include apply-utility('measure', 'short');
-  }
-  
-  &__icon {
-    width: 80px;
-    aspect-ratio: 1;
-    margin: 0 auto 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    svg {
-      width: get-size('800');
-      aspect-ratio: 1;
-      @include apply-theme-color('color', get-color('dark'), get-color('light'));
+      // Desktop: horizontal grid, no scrolling
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: get-size('500');
+      overflow-x: visible;
+      scroll-snap-type: none;
+      margin-inline: 0;
+      padding-inline: 0;
+      padding-bottom: 0;
     }
   }
 
-  &__step-title {
-    font-size: get-size('500');
-    font-weight: 700;
-    margin-bottom: 1rem;
-    line-height: 1.3;
+  &__item {
+    flex: 0 0 85%;
+    scroll-snap-align: center;
+    min-width: 0;
+
+    @include media-query('md') {
+      flex: 1;
+    }
   }
 
   &__description {
     font-size: get-size('400');
     line-height: 1.6;
   }
-}
 
-/* Funnel Section */
-.funnel {
-  $padding: 4rem;
-  position: relative;
-  padding-block: $padding;
-  color: white;
+  &__bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: get-size('300');
 
-  @include media-query('md') {
-    padding-block: 6rem;
+    li {
+      font-size: get-size('300');
+      line-height: 1.5;
+      padding-left: get-size('500');
+      position: relative;
+
+      @include media-query('md') {
+        font-size: get-size('400');
+      }
+
+      &::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        @include apply-theme-color('color', get-color('tertiary'), get-color('tertiary-glare'));
+        font-weight: 700;
+      }
+    }
   }
 
-  &__background {
-    background: get-color('primary');
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 110vw;
-    height: 100%;
-    z-index: -1;
-    clip-path: polygon(100% 0, 100% 100%, 0 calc(100% - $padding), 0 $padding);
+  &__cta {
+    text-align: center;
+    margin-top: get-size('500');
+    font-size: get-size('400');
+    font-style: italic;
+    @include apply-theme-color('color', get-color('dark-glare'), get-color('light-shade'));
 
     @include media-query('md') {
-      $angle-height: 8rem;
-      clip-path: polygon(100% 0, 100% 100%, 0 calc(100% - $angle-height), 0 $angle-height);
+      margin-top: get-size('600');
     }
   }
-  
-  &__container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  &__title {
-    font-size: get-size('700');
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 2rem;
-    line-height: 1.3;
-  }
 
-  &__content {
+  // Carousel controls (mobile only)
+  &__carousel-controls {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    gap: get-size('300');
+    margin-top: get-size('400');
 
-    @include media-query('lg') {
-      flex-direction: row-reverse;
+    @include media-query('md') {
+      display: none;
     }
   }
-  
-  &__text {
-    flex: 1;
-    font-size: get-size('400');
+
+  &__carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid;
+    @include apply-theme-color('border-color', get-color('dark-glare'), get-color('light-shade'));
+    @include apply-theme-color('background', transparent, transparent);
+    padding: 0;
+    cursor: pointer;
+    @include transition-all(cubic-bezier(0.4, 0, 0.2, 1), 200ms);
+
+    &:hover {
+      @include apply-theme-color('background', get-color('secondary-shade'), get-color('secondary'));
+      @include apply-theme-color('border-color', get-color('secondary-shade'), get-color('secondary'));
+    }
+
+    &[aria-selected="true"],
+    &.active {
+      @include apply-theme-color('background', get-color('secondary'), get-color('secondary-glare'));
+      @include apply-theme-color('border-color', get-color('secondary'), get-color('secondary-glare'));
+    }
   }
-  
-  &__image {
-    flex: 1;
-    svg {
-      width: 100%;
-      height: auto;
-      max-width: 400px;
-      margin: 0 auto;
+}
+
+/* Discovery Section */
+.discovery {
+  padding-block: get-size('600');
+
+  @include media-query('md') {
+    padding-block: get-size('700');
+  }
+
+  &__band {
+    padding-block: get-size('500');
+
+    @include media-query('md') {
+      padding-block: get-size('600');
+    }
+
+    // Band 1: Intro with visual
+    &:first-child {
+      display: grid;
+      gap: get-size('500');
+      align-items: center;
+
+      @include media-query('md') {
+        grid-template-columns: 1fr 1fr;
+        gap: get-size('700');
+      }
+
+      .content {
+        order: 2;
+
+        @include media-query('md') {
+          order: 1;
+        }
+
+        p {
+          font-size: get-size('400');
+          line-height: 1.6;
+          margin-top: get-size('400');
+        }
+      }
+
+      .visual {
+        order: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include media-query('md') {
+          order: 2;
+        }
+
+        // Chat bubble icon
+        &::before {
+          content: '';
+          display: block;
+          width: 120px;
+          height: 100px;
+          @include apply-theme-color('background', get-color('secondary'), get-color('secondary-glare'));
+          border-radius: get-size('500') get-size('500') get-size('500') 0;
+          position: relative;
+          opacity: 0.8;
+
+          @include media-query('md') {
+            width: 160px;
+            height: 130px;
+          }
+        }
+
+        &::after {
+          content: '...';
+          position: absolute;
+          font-size: get-size('700');
+          font-weight: 700;
+          color: white;
+          letter-spacing: 0.2em;
+          margin-top: -0.3em;
+        }
+      }
+    }
+
+    // Band 2: How It Works (steps)
+    &:nth-child(2) {
+      h3 {
+        font-size: get-size('600');
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: get-size('600');
+
+        @include media-query('md') {
+          font-size: get-size('700');
+          margin-bottom: get-size('700');
+        }
+      }
+    }
+
+    // Band 3: Expectations columns
+    &:nth-child(3) {
+      h3 {
+        font-size: get-size('600');
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: get-size('600');
+
+        @include media-query('md') {
+          font-size: get-size('700');
+          margin-bottom: get-size('700');
+        }
+      }
+
+      .columns {
+        display: grid;
+        gap: get-size('500');
+        margin-bottom: get-size('600');
+        max-width: 700px;
+        margin-inline: auto;
+
+        @include media-query('md') {
+          grid-template-columns: 1fr 1fr;
+          gap: get-size('600');
+          margin-bottom: get-size('700');
+        }
+      }
+
+      .column {
+        @include apply-theme-color('background', get-color('light-glare'), get-color('dark-shade'));
+        padding: get-size('500');
+        border-radius: get-size('400');
+
+        p {
+          font-size: get-size('400');
+          font-weight: 700;
+          margin-bottom: get-size('300');
+          @include apply-theme-color('color', get-color('primary'), get-color('secondary-glare'));
+        }
+
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          gap: get-size('300');
+
+          li {
+            font-size: get-size('400');
+            line-height: 1.5;
+            padding-left: get-size('500');
+            position: relative;
+
+            &::before {
+              content: '✓';
+              position: absolute;
+              left: 0;
+              @include apply-theme-color('color', get-color('tertiary'), get-color('tertiary-glare'));
+              font-weight: 700;
+            }
+          }
+        }
+
+        // Second column gets X marks
+        &:last-child ul li::before {
+          content: '✗';
+          @include apply-theme-color('color', get-color('quinary'), get-color('quinary-glare'));
+        }
+      }
+
+      > p:last-child {
+        text-align: center;
+        font-size: get-size('400');
+        font-style: italic;
+        @include apply-theme-color('color', get-color('dark-glare'), get-color('light-shade'));
+      }
+    }
+  }
+
+  &__title {
+    font-size: get-size('600');
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: get-size('400');
+
+    @include media-query('md') {
+      font-size: get-size('700');
+    }
+  }
+
+  // Steps in Band 2 (uses card component)
+  &__step {
+    margin-bottom: get-size('400');
+    counter-increment: step-counter;
+    position: relative;
+
+    @include media-query('md') {
+      margin-bottom: 0;
+    }
+
+    // Numbered indicator
+    &::before {
+      content: counter(step-counter);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      @include apply-theme-color('background', get-color('secondary'), get-color('primary'));
+      color: white;
+      font-weight: 700;
+      font-size: get-size('400');
+      margin-bottom: get-size('400');
+    }
+
+    .card__title {
+      text-align: left;
+    }
+
+    .card__body p {
+      margin: 0;
+      @include apply-theme-color('color', get-color('dark-glare'), get-color('light-shade'));
+    }
+  }
+
+  // Steps container (Band 2)
+  &__band--steps {
+    counter-reset: step-counter;
+
+    @include media-query('md') {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto 1fr;
+      gap: get-size('500');
+
+      h3 {
+        grid-column: 1 / -1;
+      }
+    }
+  }
+
+  // Band 4: CTA
+  &__cta {
+    text-align: center;
+    padding-block: get-size('800');
+    margin-top: get-size('500');
+    border-radius: get-size('500');
+    background: get-color('primary-glare');
+    color: white;
+
+    @include media-query('md') {
+      padding-block: get-size('900');
+      margin-top: get-size('600');
+    }
+
+    .button {
+      margin-bottom: get-size('400');
+    }
+
+    .disclaimer {
       display: block;
+      font-size: get-size('300');
+      opacity: 0.85;
     }
   }
 }
 
 /* Testimonials Section */
 .testimonials {
-  padding-block: get-size('300');
+  padding-block: get-size('500');
 
   @include media-query('md') {
-    padding-block: get-size('500')
+    padding-block: get-size('700');
   }
-  
+
   &__title {
     text-align: center;
     font-size: get-size('700');
     font-weight: 700;
-    margin-bottom: 3rem;
+    margin-bottom: get-size('400');
   }
-  
-  &__item {
-    padding: 3rem 2rem;
-    max-width: 800px;
-    margin: 0 auto;
+
+  &__description {
+    text-align: center;
+    font-size: get-size('400');
+    margin-bottom: get-size('600');
+    @include apply-theme-color('color', get-color('dark-glare'), get-color('light-shade'));
   }
-  
-  &__avatar {
-    width: 200px;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    margin: 0 auto 2rem;
-    overflow: hidden;
-    background: get-color('secondary');
-    
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+
+  &__list {
+    display: grid;
+    gap: get-size('500');
+
+    @include media-query('md') {
+      grid-template-columns: repeat(3, 1fr);
+      gap: get-size('600');
     }
   }
-  
-  &__quote {
+}
+
+.testimonial {
+  @include apply-theme-color('background', get-color('light-glare'), get-color('dark-shade'));
+  border-radius: get-size('400');
+  padding: get-size('500');
+  display: flex;
+  flex-direction: column;
+  gap: get-size('400');
+
+  &__text,
+  .testimonal__text {
     font-size: get-size('400');
     line-height: 1.6;
     font-style: italic;
-    text-align: center;
-    margin: 0 0 1.5rem;
+    margin: 0;
+    flex: 1;
   }
 
   &__author {
-    text-align: center;
     font-size: get-size('300');
-    font-style: normal;
-    opacity: 0.9;
+    font-weight: 700;
+    @include apply-theme-color('color', get-color('primary'), get-color('secondary-glare'));
+  }
+}
 
-    strong {
+/* Process Section */
+.process {
+  padding-block: get-size('500');
+
+  @include media-query('md') {
+    padding-block: get-size('700');
+  }
+
+  &__title {
+    text-align: center;
+    font-size: get-size('700');
+    font-weight: 700;
+    margin-bottom: get-size('400');
+  }
+
+  &__description {
+    text-align: center;
+    font-size: get-size('400');
+    margin-bottom: get-size('600');
+    @include apply-theme-color('color', get-color('dark-glare'), get-color('light-shade'));
+
+    @include media-query('md') {
+      margin-bottom: get-size('700');
+    }
+  }
+
+  &__steps {
+    display: flex;
+    flex-direction: column;
+    gap: get-size('400');
+    max-width: 900px;
+    margin-inline: auto;
+    counter-reset: process-counter;
+
+    @include media-query('md') {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: get-size('500');
+    }
+  }
+
+  &__step {
+    counter-increment: process-counter;
+
+    // Numbered badge
+    &::before {
+      content: counter(process-counter);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      @include apply-theme-color('background', get-color('secondary'), get-color('primary'));
+      color: white;
       font-weight: 700;
-      display: block;
-      margin-bottom: 0.25rem;
+      font-size: get-size('400');
+      margin-bottom: get-size('400');
+    }
+
+    .card__body p {
+      margin: 0;
+      @include apply-theme-color('color', get-color('dark-glare'), get-color('light-shade'));
+    }
+
+    // Desktop zigzag layout
+    @include media-query('md') {
+      // Odd items (1, 3) - left column
+      &:nth-child(odd) {
+        grid-column: 1;
+      }
+
+      // Even items (2, 4) - right column
+      &:nth-child(even) {
+        grid-column: 2;
+      }
     }
   }
 }

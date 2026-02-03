@@ -9,13 +9,23 @@
 {% endif %}
 
 <footer class="footer">
-  <div class="footer__content">
-    {% include 'partials/svg/logo-minimal.svg' %}
-    <nav class="[ footer__nav ]">
-      {% include "partials/site/navigation-links" %}
-    </nav>
+  <div class="footer__inner">
+    <div class="footer__column">
+      <div class="footer__logo">
+        {% include 'partials/svg/logo-minimal.svg' %}
+      </div>
+      <nav class="footer__nav">
+        {% include "partials/site/navigation-links" %}
+      </nav>
+    </div>
+    <div class="footer__column footer__about">
+      <h2 class="footer__heading">About AntDev</h2>
+      <p class="footer__text">
+        AntDev is a small software development studio based in Roanoke, Virginia, helping businesses get practical, tailored technology&mdash;not bloated systems they'll never use. I bring 10+ years of professional software development experience and a focus on clear communication and long-term relationships, working with clients both locally and remotely.
+      </p>
+    </div>
   </div>
   <span id="copyright">
-    © {{ year }} {{ owner }}. All Rights Reserved.
+    &copy; {{ year }} {{ owner }}. All Rights Reserved.
   </span>
 </footer>

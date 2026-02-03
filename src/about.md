@@ -1,6 +1,6 @@
 ---
-layout: layouts/page
-title: About
+layout: pages/about
+title: About Anthony Utt | AntDev
+customTitle: true
+metaDesc: "Meet Ant, the developer behind AntDev. Senior Software Engineer by day, helping Roanoke Valley businesses with websites, automations, and custom software."
 ---
-About me
-<h1 class="test">Test</h1>

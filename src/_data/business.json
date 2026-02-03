@@ -1,0 +1,21 @@
+{
+  "areaServed": {
+    "name": "Roanoke Valley",
+    "region": "Virginia",
+    "country": "US"
+  },
+  "services": [
+    {
+      "name": "Web Design & Development",
+      "description": "Clean, modern websites that make it easy for people to find you, trust you, and get in touch. Custom design, mobile-friendly, SEO-optimized, with hosting and updates available."
+    },
+    {
+      "name": "Business & Workflow Automation",
+      "description": "Connect the tools you already use so repetitive work happens automatically. Lead capture, automatic reminders, follow-up emails, and automated reporting."
+    },
+    {
+      "name": "Custom Software Development",
+      "description": "When off-the-shelf tools don't fit, get exactly what your business needs. Internal tools, customer portals, dashboards, and system integrations."
+    }
+  ]
+}

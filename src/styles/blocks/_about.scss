@@ -1,0 +1,270 @@
+@use '../functions' as *;
+@use '../mixins' as *;
+
+// About Hero
+.about-hero {
+  padding: get-size('800') 0;
+  @include apply-theme-color('background', get-color('light'), get-color('dark'));
+
+  @include media-query('md') {
+    padding: get-size('900') 0;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: get-size('700');
+
+    @include media-query('md') {
+      flex-direction: row;
+      align-items: center;
+      gap: get-size('800');
+    }
+  }
+
+  &__text {
+    flex: 1;
+
+    p {
+      @include apply-theme-color('color', get-color('dark-glare'), get-color('light-shade'));
+    }
+  }
+
+  &__title {
+    font-size: get-size('700');
+    font-weight: 700;
+    line-height: 1.2;
+    @include apply-theme-color('color', get-color('dark'), get-color('light'));
+
+    @include media-query('md') {
+      font-size: get-size('800');
+    }
+  }
+
+  &__image {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+
+    @include media-query('md') {
+      justify-content: flex-end;
+    }
+
+    img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      border-radius: get-size('500');
+      @include apply-theme-color('background', get-color('light-shade'), get-color('dark-shade'));
+
+      @include media-query('md') {
+        max-width: 350px;
+      }
+    }
+  }
+}
+
+// About Story
+.about-story {
+  &__title {
+    font-size: get-size('700');
+    font-weight: 700;
+    margin-bottom: get-size('600');
+    @include apply-theme-color('color', get-color('primary'), get-color('secondary-glare'));
+
+    @include media-query('md') {
+      font-size: get-size('800');
+    }
+  }
+
+  &__content {
+    
+    p, li {
+      @include apply-theme-color('color', get-color('dark-glare'), get-color('light-shade'));
+    }
+
+    ul {
+      padding-left: get-size('600');
+      margin: get-size('500') 0;
+
+      li {
+        margin-bottom: get-size('300');
+        position: relative;
+
+        &::marker {
+          @include apply-theme-color('color', get-color('secondary'), get-color('secondary-glare'));
+        }
+      }
+    }
+  }
+}
+
+// About Why
+.about-why {
+  &__title {
+    font-size: get-size('700');
+    font-weight: 700;
+    margin-bottom: get-size('600');
+    @include apply-theme-color('color', get-color('primary'), get-color('secondary-glare'));
+
+    @include media-query('md') {
+      font-size: get-size('800');
+    }
+  }
+
+  &__content {
+    
+    p, li {
+      @include apply-theme-color('color', get-color('dark-glare'), get-color('light-shade'));
+    }
+
+    ul {
+      padding-left: get-size('600');
+      margin: get-size('500') 0;
+
+      li {
+        margin-bottom: get-size('300');
+
+        &::marker {
+          @include apply-theme-color('color', get-color('secondary'), get-color('secondary-glare'));
+        }
+      }
+    }
+  }
+}
+
+// About Expertise
+.about-expertise {
+  &__title {
+    font-size: get-size('700');
+    font-weight: 700;
+    margin-bottom: get-size('600');
+    @include apply-theme-color('color', get-color('primary'), get-color('secondary-glare'));
+
+    @include media-query('md') {
+      font-size: get-size('800');
+    }
+  }
+
+  &__content {
+    display: grid;
+    gap: get-size('700');
+
+    @include media-query('md') {
+      grid-template-columns: 1fr 1fr;
+      gap: get-size('800');
+    }
+  }
+
+  &__services,
+  &__values {
+    padding: get-size('600');
+    border-radius: get-size('400');
+    @include apply-theme-color('background', get-color('light-shade'), get-color('dark-shade'));
+
+    p, li {
+      @include apply-theme-color('color', get-color('dark-glare'), get-color('light-shade'));
+    }
+
+    p {
+      margin-bottom: get-size('400');
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    ul {
+      padding-left: get-size('600');
+      margin: get-size('400') 0;
+
+      li {
+        margin-bottom: get-size('300');
+
+        &::marker {
+          @include apply-theme-color('color', get-color('secondary'), get-color('secondary-glare'));
+        }
+
+        strong {
+          @include apply-theme-color('color', get-color('dark'), get-color('light'));
+        }
+      }
+    }
+  }
+}
+
+// About Process
+.about-process {
+  &__title {
+    font-size: get-size('700');
+    font-weight: 700;
+    margin-bottom: get-size('600');
+    @include apply-theme-color('color', get-color('primary'), get-color('secondary-glare'));
+
+    @include media-query('md') {
+      font-size: get-size('800');
+    }
+  }
+
+  &__intro {
+        margin-bottom: get-size('600');
+
+    p {
+      @include apply-theme-color('color', get-color('dark-glare'), get-color('light-shade'));
+      margin-bottom: get-size('400');
+    }
+  }
+
+  &__items {
+    display: grid;
+    gap: get-size('500');
+
+    @include media-query('md') {
+      grid-template-columns: repeat(3, 1fr);
+      gap: get-size('600');
+    }
+  }
+
+  &__item {
+    height: 100%;
+  }
+
+  &__closing {
+        margin-top: get-size('600');
+    @include apply-theme-color('color', get-color('dark-glare'), get-color('light-shade'));
+  }
+}
+
+// About Personal
+.about-personal {
+  &__title {
+    font-size: get-size('700');
+    font-weight: 700;
+    margin-bottom: get-size('600');
+    @include apply-theme-color('color', get-color('primary'), get-color('secondary-glare'));
+
+    @include media-query('md') {
+      font-size: get-size('800');
+    }
+  }
+
+  &__content {
+    
+    p, li {
+      @include apply-theme-color('color', get-color('dark-glare'), get-color('light-shade'));
+    }
+
+    ul {
+      padding-left: get-size('600');
+      margin: get-size('500') 0;
+
+      li {
+        margin-bottom: get-size('300');
+
+        &::marker {
+          @include apply-theme-color('color', get-color('secondary'), get-color('secondary-glare'));
+        }
+      }
+    }
+  }
+}

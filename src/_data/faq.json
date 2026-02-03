@@ -1,0 +1,26 @@
+[
+  {
+    "question": "what happens in the discovery session?",
+    "answer": "We'll talk about your business, how you're working today, and where things feel slow or clunky. I'll ask questions, sketch out a few options, and we'll see together whether a website, automations, custom software&mdash;or nothing right now&mdash;makes the most sense for you."
+  },
+  {
+    "question": "is the discovery session really free? what's the catch?",
+    "answer": "It's free, and there's no catch. The goal is to understand your situation and see if there's a good fit. If it makes sense to work together, I'll put together a proposal. If not, you still walk away with ideas."
+  },
+  {
+    "question": "how much does a typical project cost?",
+    "answer": "It depends on the scope. Smaller projects (like a simple landing page or a targeted automation) can often be done for under $1k; larger custom software or system rebuilds cost more. After the Discovery Session, I'll give you a clear proposal with timelines and pricing before you decide anything."
+  },
+  {
+    "question": "i'm not very 'technical', is that a problem?",
+    "answer": "Not at all. It's my job to handle the technical side and explain your options in plain English, so you can make good decisions without needing to be a tech expert."
+  },
+  {
+    "question": "what if i have an older system or legacy app?",
+    "answer": "That's common. We'll look at what you have, what's working, and what's holding you back. Sometimes the right answer is a full rebuild; other times, we can modernize key pieces or connect it to newer tools to get more life out of it."
+  },
+  {
+    "question": "what happens after the project is finished?",
+    "answer": "Once we launch, I'll make sure you and your team know how to use everything. If you'd like ongoing help&mdash;fixes, small improvements, or planning next steps&mdash;we can set up a simple support arrangement."
+  }
+]

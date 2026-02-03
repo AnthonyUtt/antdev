@@ -1,214 +1,273 @@
 {% layout 'layouts/page' %}
 
 {% block content %}
-<main class="[ wrapper section-flow ]" id="main-content" tabindex="-1">
+<main id="main-content" tabindex="-1">
   <section class="[ hero ]">
     <div class="[ hero__background ]" id="hero-dot-grid"></div>
     <div class="[ hero__content ] [ flow ]">
-      <h1 class="[ hero__title ]">technology solutions for roanoke valley businesses</h1>
-      <p class="[ hero__subtitle ]">From custom websites to software automation and legacy system modernization, we help local businesses use technology effectively. Based in Roanoke, serving Southwest Virginia.</p>
-      <a href="/contact/" class="[ hero__cta] [ button button--secondary ]">Schedule Your Free Consultation</a>
+      <h1 class="[ hero__title ]">practical software solutions for roanoke valley businesses</h1>
+      <p class="[ hero__subtitle ]">From modern websites to workflow automations to custom software, I help Roanoke Valley businesses fix clunky serviceses, escape spreadsheet chaos, and make their tech actually work for them.</p>
+      <a href="/contact/" class="[ hero__cta ] [ button button--primary ]">
+        Book a Discovery Session
+      </a>
+      <span class="[ hero__subtext ]">
+        30-45 minutes via Zoom or in-person. No pressure, no obligation&mdash;just a chance to see if we're a good fit.
+      </span>
     </div>
-    <div class="[ hero__image ]">
-      {% include 'partials/svg/hero.svg' %}
+  </section>
+  <div class="[ wrapper section-flow ]">
+  <section class="[ services ]">
+    <h2 class="[ services__title ]">how i can help</h2>
+    <div class="[ services__steps ]">
+      <div class="[ services__item ] [ card ]">
+        <h3 class="[ card__title ]">websites that bring you customers</h3>
+        <div class="[ card__body ]">
+          <p class="[ services__description ]">Clean, modern sites that make it easy for people to find you, trust you, and get in touch. Clear messaging, fast loading times, and easy updates&mdash;without you wrestling with DIY site builders.</p>
+          <ul class="[ services__bullets ]">
+            <li>Custom design and development</li>
+            <li>Looks great on phones and computers</li>
+            <li>Built to rank on Google</li>
+            <li>Hosting and ongoing updates available</li>
+          </ul>
+        </div>
+      </div>
+      <div class="[ services__item ] [ card ]">
+        <h3 class="[ card__title ]">business &amp; workflow automation</h3>
+        <div class="[ card__body ]">
+          <p class="[ services__description ]">I connect the tools you already use so the repetitive, boring work happens automatically instead of by hand.</p>
+          <ul class="[ services__bullets ]">
+            <li>Capture leads from your website into a spreadsheet or CRM</li>
+            <li>Automatic reminders and follow-up emails</li>
+            <li>Automated reporting and status updates for your team</li>
+          </ul>
+        </div>
+      </div>
+      <div class="[ services__item ] [ card ]">
+        <h3 class="[ card__title ]">custom software built around your work</h3>
+        <div class="[ card__body ]">
+          <p class="[ services__description ]">When off-the-shelf tools don't fit, I build exactly what your business needs&mdash;from internal dashboards to full-scale web applications.</p>
+          <ul class="[ services__bullets ]">
+            <li>Internal tools to manage projects, inventory, or jobs</li>
+            <li>Customer portals and self-service dashboards</li>
+            <li>Integrations between systems that don't talk to each other</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="[ services__carousel-controls ]" role="tablist" aria-label="Services navigation">
+      <button
+        class="[ services__carousel-dot ]"
+        type="button"
+        role="tab"
+        aria-label="View websites service"
+        aria-selected="true"
+        data-services-dot="0"
+      ></button>
+      <button
+        class="[ services__carousel-dot ]"
+        type="button"
+        role="tab"
+        aria-label="View automation service"
+        aria-selected="false"
+        data-services-dot="1"
+      ></button>
+      <button
+        class="[ services__carousel-dot ]"
+        type="button"
+        role="tab"
+        aria-label="View custom software service"
+        aria-selected="false"
+        data-services-dot="2"
+      ></button>
+    </div>
+    <p class="[ services__cta ]">Not sure which one you need? That's what the Discovery Session is for.</p>
+  </section>
+  <section class="[ discovery ]">
+    <div class="[ discovery__band ]">
+      <div class="[ content ]">
+        <h2 class="[ discovery__title ]">start with a discovery session (not a sales pitch)</h2>
+        <p>Most &quot;discovery calls&quot; are just sales scripts. This isn't that.</p>
+        <p>When you book a free Discovery Session with me, there's no pressure, no tricks, and no &quot;sign today or miss out&quot; nonsense. It's simply a converation to see if I can genuinely help your business and if we're a good fit to work together.</p>
+      </div>
+      <div class="[ visual ]">
+      </div>
+    </div>
+    <div class="[ discovery__band discovery__band--steps ]">
+      <h3>How It Works</h3>
+      <div class="[ discovery__step ] [ card ]">
+        <h4 class="[ card__title ]">Book a time</h4>
+        <div class="[ card__body ]">
+          <p>Pick a slot that works for you&mdash;on Zoom or in-person in the Roanoke Valley.</p>
+        </div>
+      </div>
+      <div class="[ discovery__step ] [ card ]">
+        <h4 class="[ card__title ]">Walk me through your business</h4>
+        <div class="[ card__body ]">
+          <p>You talk, I listen. No prep, no jargon; just what's working and what isn't.</p>
+        </div>
+      </div>
+      <div class="[ discovery__step ] [ card ]">
+        <h4 class="[ card__title ]">Get an honest next step</h4>
+        <div class="[ card__body ]">
+          <p>I'll follow up with what I think would help, rough estimates for cost &amp; timing, and whether I'm actually the right person for it.</p>
+        </div>
+      </div>
+    </div>
+    <div class="[ discovery__band ]">
+      <h3>What You Can Expect (and What You Won't)</h3>
+      <div class="[ columns ]">
+        <div class="[ column ]">
+          <p>You can expect:</p>
+          <ul>
+            <li>A real converation, not a script</li>
+            <li>Straight answers about what's possible</li>
+            <li>Respect for your time and budget</li>
+          </ul>
+        </div>
+        <div class="[ column ]">
+          <p>You won't get:</p>
+          <ul>
+            <li>High-pressure tactics</li>
+            <li>Fake &quot;limited time&quot; offers</li>
+            <li>A guilt trip if you say no</li>
+          </ul>
+        </div>
+      </div>
+      <p>If there's a real opportunity to build something useful together, great! If not, no hard feelings.</p>
+    </div>
+    <div class="[ discovery__band discovery__cta ]">
+      <a class="[ button button--primary ]" href="/contact/">
+        Book Your Free Discovery Session
+      </a>
+      <span class="[ disclaimer ]">
+        30&ndash;45 minutes. No pressure, no commitment&mdash;just an honest converation.
+      </span>
+    </div>
+  </section>
+  <section class="[ testimonials ]">
+    <h2 class="[ testimonials__title ]">nice things clients have said</h2>
+    <p class="[ testimonials__description ]">
+      These are from earlier freelance projects, but they still reflect how I work today.
+    </p>
+    <div class="[ testimonials__list ]">
+      <div class="[ testimonial ]">
+        <p class="[ testimonal__text ]">
+          &quot;Ant adapted to changes, communicated well, and always found a way to move the project forward. I wouldn't trust anyone else.&quot;
+        </p>
+        <span class="[ testimonial__author ]">
+          Freelance Client
+        </span>
+      </div>
+      <div class="[ testimonial ]">
+        <p class="[ testimonal__text ]">
+          &quot;Ant went above and beyond in every aspect of the project and quickly became someone our company could trust.&quot;
+        </p>
+        <span class="[ testimonial__author ]">
+          Freelance Client
+        </span>
+      </div>
+      <div class="[ testimonial ]">
+        <p class="[ testimonal__text ]">
+          &quot;Down-to-earth, kind, and extremely knowledgeable. We highly recommend Ant and his services.&quot;
+        </p>
+        <span class="[ testimonial__author ]">
+          Freelance Client
+        </span>
+      </div>
     </div>
   </section>
   <section class="[ process ]">
-    <h2 class="[ process__title ]">how we help your business</h2>
+    <h2 class="[ process__title ]">how we'll work together</h2>
+    <p class="[ process__description ]">Every project is a little different, but the process is always straightforward.</p>
     <div class="[ process__steps ]">
-      <div class="[ process__step ]">
-        <div class="[ process__icon ]">
-          <svg viewBox="0 0 30 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="3" y="4" width="24" height="18" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
-            <line x1="3" y1="10" x2="27" y2="10" stroke="currentColor" stroke-width="2"/>
-            <line x1="10" y1="10" x2="10" y2="22" stroke="currentColor" stroke-width="2"/>
-          </svg>
-        </div>
-        <h3 class="[ process__step-title ]">website design &amp; development</h3>
-        <p class="[ process__description ]">Professional, mobile-responsive websites built to showcase your business. Custom designs tailored to your needs, from simple brochure sites to complex web applications.</p>
-      </div>
-      <div class="[ process__step ]">
-        <div class="[ process__icon ]">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <h3 class="[ process__step-title ]">business process automation</h3>
-        <p class="[ process__description ]">Streamline manual workflows and connect your business systems. Save time and reduce errors by automating repetitive tasks and integrating the tools you already use.</p>
-      </div>
-      <div class="[ process__step ]">
-        <div class="[ process__icon ]">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <polyline points="16,18 22,12 16,6" stroke="currentColor" stroke-width="2" fill="none"/>
-            <polyline points="8,6 2,12 8,18" stroke="currentColor" stroke-width="2" fill="none"/>
-          </svg>
-        </div>
-        <h3 class="[ process__step-title ]">custom software solutions</h3>
-        <p class="[ process__description ]">Legacy system modernization, custom applications, and software development tailored to your specific business needs. Built to scale as your business grows.</p>
-      </div>
-    </div>
-  </section>
-  <section class="[ funnel ]">
-    <div class="[ funnel__background ]"></div>
-    <div class="[ funnel__container ]">
-      <h2 class="[ funnel__title ]">we start with discovery, not a sales pitch</h2>
-      <div class="[ funnel__content ]">
-        <div class="[ funnel__text ] [ flow ]">
-          <p>Every business is different. Some need a new website to establish their online presence. Others are struggling with manual processes that could be automated. Some are dealing with outdated systems that need modernization.</p>
-          <p>We don't believe in one-size-fits-all solutions or pushing services you don't need. Instead, we start every relationship with a discovery conversation to understand your business, your challenges, and your goals.</p>
-          <p>After our consultation, we'll give you an honest assessment. Sometimes that means recommending a website. Sometimes it means process automation would have more impact. And sometimes it means you're not ready for us yet—and that's okay.</p>
-          <p>We're interested in building long-term relationships with Roanoke Valley businesses, not making quick sales. If we can help you, great. If not, we're happy to point you in the right direction.</p>
-        </div>
-        <div class="[ funnel__image ]">
-          {% include 'partials/svg/funnel.svg' %}
+      <div class="[ process__step ] [ card ]">
+        <h3 class="[ card__title ]">Discovery Session</h3>
+        <div class="[ card__body ]">
+          <p>We talk through your business, your current tools, and what's slowing you down. I'll ask questions, sketch out some options, and make sure I understand the real problem before suggesting anything.</p>
         </div>
       </div>
-    </div>
-  </section>
-  <section class="[ testimonials carousel ]">
-    <h2 class="[ testimonials__title ]">what our clients say</h2>
-    <div class="[ carousel__container ]">
-      <div class="[ carousel__track ]" data-carousel-track="testimonials">
-        {% for testimonial in testimonials.items %}
-        <div class="[ carousel__slide ]" data-carousel-slide="testimonials" id="{{ testimonial.id }}" {% if forloop.first %}data-active="true"{% endif %}>
-          <div class="[ testimonials__avatar ]">
-            <img src="{{ testimonial.avatar }}" alt="{{ testimonial.name }}" loading="lazy">
-          </div>
-          <blockquote class="[ testimonials__quote ]">
-            {{ testimonial.quote }}
-          </blockquote>
-          <cite class="[ testimonials__author ]">
-            <strong>{{ testimonial.name }}, {{ testimonial.title }}</strong><br>
-            {{ testimonial.company }}, {{ testimonial.location }}
-          </cite>
+      <div class="[ process__step ] [ card ]">
+        <h3 class="[ card__title ]">Proposal &amp; Plan</h3>
+        <div class="[ card__body ]">
+          <p>You get a clear write-up of what I recommend, timelines, and pricing&mdash;whether that's a website, some targeted automations, custom software, or a mix.</p>
         </div>
-        {% endfor %}
       </div>
-
-      <div class="[ carousel__controls ]">
-        <button
-          class="[ carousel__button ]"
-          type="button"
-          aria-label="Previous testimonial"
-          data-carousel-prev="testimonials"
-        >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-
-        <div class="[ carousel__dots ]" role="tablist" aria-label="Testimonials navigation">
-          {% for testimonial in testimonials.items %}
-          <button
-            class="[ carousel__dot ]"
-            type="button"
-            role="tab"
-            aria-label="View testimonial from {{ testimonial.name }}"
-            aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
-            aria-controls="{{ testimonial.id }}"
-            data-carousel-dot="testimonials"
-          ></button>
-          {% endfor %}
+      <div class="[ process__step ] [ card ]">
+        <h3 class="[ card__title ]">Build &amp; Iterate</h3>
+        <div class="[ card__body ]">
+          <p>I build in small, visible chunks, with regular check-ins. You'll see progress, give feedback, and we'll adjust as we go so nothing drifts off-course.</p>
         </div>
-
-        <button
-          class="[ carousel__button ]"
-          type="button"
-          aria-label="Next testimonial"
-          data-carousel-next="testimonials"
-        >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
+      </div>
+      <div class="[ process__step ] [ card ]">
+        <h3 class="[ card__title ]">Launch &amp; Support</h3>
+        <div class="[ card__body ]">
+          <p>Once we launch, I make sure your team is comfortable using everything. Ongoing support and improvements are available if you want a long-term partner.</p>
+        </div>
       </div>
     </div>
   </section>
   <section class="[ cta ]">
     <div class="[ cta__content ] [ flow ]">
-      <h2 class="[ cta__title ]">let's talk about your business</h2>
-      <p class="[ cta__text ]">The first step is a free 30-minute consultation where we'll discuss your business needs and challenges. No pressure, no sales pitch—just an honest conversation about whether and how technology could help your business grow.</p>
-      <a href="/contact/" class="[ cta__button ] [ button button--secondary ]">Schedule Your Free Consultation</a>
+      <h2 class="[ cta__title ]">ready to explore your options?</h2>
+      <p class="[ cta__text ]">
+        If the way I work resonates with you, let's start with a Discovery Session. We'll look at your current setup and explore wither a website, automations, or custom software&mdash;or a mix&mdash;makes the most sense for you and your business.
+      </p>
+      <a href="/contact/" class="[ cta__button ] [ button button--secondary ]">Book Your Discovery Session Today</a>
+      <p class="[ cta__subtext ]">
+        30&ndash;45 minutes on Zoom or in-person in the Roanoke Valley area. No pressure, no obligation; just a chance to see if we're a good fit.
+      </p>
     </div>
   </section>
-  <section class="faq">
-    <h2 class="faq__title">frequently asked questions</h2>
-    <div class="faq__items">
-      <div class="faq__item">
-        <button class="faq__question" type="button" aria-expanded="false">
-          what kind of businesses do you work with?
-          <span class="faq__toggle" aria-hidden="true"></span>
-        </button>
-        <div class="faq__answer">
-          <p>We work with small to medium-sized businesses throughout the Roanoke Valley and Southwest Virginia. Our clients range from local service providers to manufacturing companies—anyone who needs help using technology more effectively.</p>
-        </div>
-      </div>
-      <div class="faq__item">
-        <button class="faq__question" type="button" aria-expanded="false">
-          how do you determine what solution my business needs?
-          <span class="faq__toggle" aria-hidden="true"></span>
-        </button>
-        <div class="faq__answer">
-          <p>We start with a discovery consultation to understand your business, current processes, and pain points. Based on that conversation, we'll recommend the solution that makes the most sense—whether that's a website, automation, custom software, or something else entirely.</p>
-        </div>
-      </div>
-      <div class="faq__item">
-        <button class="faq__question" type="button" aria-expanded="false">
-          what if I'm not sure what I need?
-          <span class="faq__toggle" aria-hidden="true"></span>
-        </button>
-        <div class="faq__answer">
-          <p>That's completely normal and exactly why we offer a free consultation. We'll ask questions about your business and help you identify where technology could have the most impact. There's no obligation—we're happy to provide guidance even if we're not the right fit.</p>
-        </div>
-      </div>
-      <div class="faq__item">
-        <button class="faq__question" type="button" aria-expanded="false">
-          how much do your services cost?
-          <span class="faq__toggle" aria-hidden="true"></span>
-        </button>
-        <div class="faq__answer">
-          <p>Project costs vary significantly based on scope and complexity. A simple website might start around $3,000, while custom software projects can range from $10,000 to $50,000+. We provide detailed quotes after understanding your specific needs during our initial consultation.</p>
-        </div>
-      </div>
-      <div class="faq__item">
-        <button class="faq__question" type="button" aria-expanded="false">
-          do you work with businesses outside of roanoke?
-          <span class="faq__toggle" aria-hidden="true"></span>
-        </button>
-        <div class="faq__answer">
-          <p>While we're based in Roanoke and primarily serve Southwest Virginia, we're open to working with businesses elsewhere depending on the project. Local clients benefit from in-person meetings, but we can work remotely when needed.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  {% include 'partials/components/faq' %}
+  </div>
 </main>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  const faqItems = document.querySelectorAll('.faq__item');
-  
-  faqItems.forEach(item => {
-    const question = item.querySelector('.faq__question');
-    const answer = item.querySelector('.faq__answer');
-    
-    question.addEventListener('click', () => {
-      const isOpen = question.getAttribute('aria-expanded') === 'true';
-      
-      // Close all other items
-      faqItems.forEach(otherItem => {
-        const otherQuestion = otherItem.querySelector('.faq__question');
-        const otherAnswer = otherItem.querySelector('.faq__answer');
-        otherQuestion.setAttribute('aria-expanded', 'false');
-        otherAnswer.style.maxHeight = null;
+  const servicesContainer = document.querySelector('.services__steps');
+  const servicesDots = document.querySelectorAll('[data-services-dot]');
+  const servicesItems = document.querySelectorAll('.services__item');
+
+  if (servicesContainer && servicesDots.length && servicesItems.length) {
+    // Update dots on scroll
+    const updateDots = () => {
+      const scrollLeft = servicesContainer.scrollLeft;
+      const containerWidth = servicesContainer.offsetWidth;
+      const itemWidth = servicesItems[0].offsetWidth;
+      const gap = parseFloat(getComputedStyle(servicesContainer).gap) || 0;
+
+      // Calculate which item is most visible
+      const scrollPosition = scrollLeft + containerWidth / 2;
+      let activeIndex = 0;
+
+      servicesItems.forEach((item, index) => {
+        const itemLeft = item.offsetLeft - servicesContainer.offsetLeft;
+        const itemCenter = itemLeft + itemWidth / 2;
+
+        if (scrollPosition >= itemLeft && scrollPosition < itemLeft + itemWidth + gap) {
+          activeIndex = index;
+        }
       });
-      
-      // Toggle current item
-      if (!isOpen) {
-        question.setAttribute('aria-expanded', 'true');
-        answer.style.maxHeight = answer.scrollHeight + 'px';
-      }
+
+      servicesDots.forEach((dot, index) => {
+        dot.setAttribute('aria-selected', index === activeIndex ? 'true' : 'false');
+      });
+    };
+
+    servicesContainer.addEventListener('scroll', updateDots, { passive: true });
+
+    // Click handler for dots
+    servicesDots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        const item = servicesItems[index];
+        if (item) {
+          item.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        }
+      });
     });
-  });
+
+    // Initial update
+    updateDots();
+  }
 });
 </script>
 <script>
@@ -217,10 +276,10 @@ document.addEventListener('DOMContentLoaded', function() {
   if (container && typeof DotGrid !== 'undefined') {
     new DotGrid(container, {
       dotSize: 5,
-      gap: 15,
-      baseColor: '#552e84',
-      activeColor: '#552e84',
-      opacity: 0.2,
+      gap: 12,
+      baseColor: '#808080',
+      activeColor: '#808080',
+      opacity: 0.3,
       proximity: 120,
       shockRadius: 250,
       shockStrength: 5,

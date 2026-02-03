@@ -10,20 +10,16 @@
   "authorEmail": "hello@antdev.sh",
   "navigation": [
     {
-      "text": "home",
+      "text": "Home",
       "url": "/"
     },
     {
-      "text": "about",
+      "text": "About",
       "url": "/about/"
     },
     {
-      "text": "portfolio",
-      "url": "/portfolio/"
-    },
-    {
-      "text": "contact",
-      "url": "/contact/"
+      "text": "Services",
+      "url": "/services/"
     }
   ]
 }

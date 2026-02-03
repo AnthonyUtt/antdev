@@ -1,15 +1,19 @@
 <a class="visually-hidden" href="#main-content">Skip to main content</a>
-<header class="[ header ] [ wrapper ]">
-  <a class="[ header-logo ]" href="/">
-    {% include "partials/svg/logo.svg" %}
-  </a>
-  <nav class="[ header__nav ]">
-    {% include "partials/site/navigation-links" %}
-  </nav>
-  {% include "partials/components/theme-toggle" %}
-  <button class="[ header__hamburger ]" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
-    <span class="[ header__hamburger-line ]"></span>
-    <span class="[ header__hamburger-line ]"></span>
-    <span class="[ header__hamburger-line ]"></span>
-  </button>
+<header class="[ header ]">
+  <div class="[ wrapper ]">
+    <a class="[ header-logo ]" href="/" aria-label="AntDev home">
+      {% include "partials/svg/logo.svg" %}
+    </a>
+    <nav class="[ header__nav ]">
+      {% include "partials/site/navigation-links" %}
+    </nav>
+    <div class="[ header__cta ]">
+      <a class="[ button button--primary ]" href="/contact/">Book a Free Discovery Session</a>
+    </div>
+    <button class="[ header__hamburger ]" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span class="[ header__hamburger-line ]"></span>
+      <span class="[ header__hamburger-line ]"></span>
+      <span class="[ header__hamburger-line ]"></span>
+    </button>
+  </div>
 </header>

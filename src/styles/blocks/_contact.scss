@@ -1,0 +1,108 @@
+@use '../functions' as *;
+@use '../mixins' as *;
+
+// Contact Hero
+.contact-hero {
+  padding: get-size('800') 0 get-size('600');
+  @include apply-theme-color('background', get-color('light'), get-color('dark'));
+
+  @include media-query('md') {
+    padding: get-size('900') 0 get-size('700');
+  }
+
+  &__content {
+    p {
+      @include apply-theme-color('color', get-color('dark-glare'), get-color('light-shade'));
+    }
+  }
+
+  &__title {
+    font-size: get-size('700');
+    font-weight: 700;
+    line-height: 1.2;
+    @include apply-theme-color('color', get-color('dark'), get-color('light'));
+
+    @include media-query('md') {
+      font-size: get-size('800');
+    }
+  }
+}
+
+// Contact Form Section
+.contact-form-section {
+  padding: get-size('700') 0 get-size('900');
+}
+
+// Contact Form
+.contact-form {
+  &__field {
+    margin-bottom: get-size('500');
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: get-size('300');
+    font-weight: 600;
+    @include apply-theme-color('color', get-color('dark'), get-color('light'));
+
+    span:not(.contact-form__optional) {
+      @include apply-theme-color('color', get-color('quinary'), get-color('quinary-glare'));
+    }
+  }
+
+  &__optional {
+    font-weight: 400;
+    font-size: get-size('300');
+    @include apply-theme-color('color', get-color('dark-glare'), get-color('light-shade'));
+  }
+
+  &__input,
+  &__select,
+  &__textarea {
+    display: block;
+    width: 100%;
+    padding: get-size('400');
+    font-size: get-size('400');
+    font-family: inherit;
+    border: 2px solid;
+    border-radius: get-size('300');
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    @include apply-theme-color('background', get-color('light-glare'), get-color('dark-shade'));
+    @include apply-theme-color('color', get-color('dark'), get-color('light'));
+    @include apply-theme-color('border-color', get-color('light-shade'), get-color('dark-glare'));
+
+    &:focus {
+      outline: none;
+      @include apply-theme-color('border-color', get-color('primary'), get-color('secondary-glare'));
+      @include apply-theme-color('box-shadow', 0 0 0 3px rgba(get-color('primary'), 0.15), 0 0 0 3px rgba(get-color('secondary-glare'), 0.15));
+    }
+
+    &::placeholder {
+      @include apply-theme-color('color', get-color('dark-glare'), get-color('light-shade'));
+      opacity: 0.7;
+    }
+  }
+
+  &__select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right get-size('400') center;
+    padding-right: get-size('700');
+  }
+
+  &__textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  &__submit {
+    margin-top: get-size('600');
+    width: 100%;
+
+    @include media-query('md') {
+      width: auto;
+    }
+  }
+}

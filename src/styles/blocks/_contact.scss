@@ -12,19 +12,13 @@
 
   &__content {
     p {
-      @include apply-theme-color('color', get-color('dark-glare'), get-color('light-shade'));
+      @include text-muted;
     }
   }
 
   &__title {
-    font-size: get-size('700');
-    font-weight: 700;
-    line-height: 1.2;
-    @include apply-theme-color('color', get-color('dark'), get-color('light'));
-
-    @include media-query('md') {
-      font-size: get-size('800');
-    }
+    margin-bottom: get-size('500');
+    @include section-title($centered: false, $color-style: 'default');
   }
 }
 
@@ -53,7 +47,7 @@
   &__optional {
     font-weight: 400;
     font-size: get-size('300');
-    @include apply-theme-color('color', get-color('dark-glare'), get-color('light-shade'));
+    @include text-muted;
   }
 
   &__input,
@@ -78,7 +72,7 @@
     }
 
     &::placeholder {
-      @include apply-theme-color('color', get-color('dark-glare'), get-color('light-shade'));
+      @include text-muted;
       opacity: 0.7;
     }
   }

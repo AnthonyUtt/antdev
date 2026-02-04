@@ -62,18 +62,31 @@ h4 {
 
 // Scrollbar styles
 ::-webkit-scrollbar {
-	height: 1rem;
+	width: 6px;
+	height: 6px;
 }
 
 ::-webkit-scrollbar-track {
 	background-color: transparent;
-	border: 1px solid get-color('dark-glare');
-	border-radius: 0.25rem;
 }
 
 ::-webkit-scrollbar-thumb {
-	background-color: get-color('dark');
-	border-radius: 0.25rem;
+	background-color: get-color('dark-glare');
+	border-radius: 4px;
+
+	&:hover {
+		background-color: get-color('dark');
+	}
+}
+
+html.dark {
+	::-webkit-scrollbar-thumb {
+		background-color: get-color('light-shade');
+
+		&:hover {
+			background-color: get-color('light');
+		}
+	}
 }
 
 @include generator.generate-utility-classes();

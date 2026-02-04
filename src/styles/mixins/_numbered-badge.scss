@@ -1,0 +1,21 @@
+@use '../functions' as *;
+@use 'apply-theme-color' as *;
+
+// Numbered badge mixin
+// Creates circular numbered indicators for steps/processes
+
+$badge-size-default: 36px;
+
+@mixin numbered-badge($size: $badge-size-default) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  @include apply-theme-color('background', get-color('secondary'), get-color('primary'));
+  color: white;
+  font-weight: 700;
+  font-size: get-size('400');
+  margin-bottom: get-size('400');
+}

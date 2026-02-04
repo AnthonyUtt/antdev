@@ -126,3 +126,25 @@ $config: (
   ),
 );
 
+/**
+ * DESIGN TOKENS
+ * Named values for consistent sizing across the codebase
+ */
+
+// Container max-widths
+$container-widths: (
+  'narrow': 700px,
+  'medium': 900px,
+  'wide': 1200px,
+);
+
+// Image max-widths
+$image-sizes: (
+  'sm': 250px,
+  'md': 300px,
+  'lg': 350px,
+);
+
+// Badge size for numbered indicators
+$badge-size: 36px;
+

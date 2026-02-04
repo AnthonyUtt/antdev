@@ -1,0 +1,51 @@
+@use '../functions' as *;
+@use 'media-query' as *;
+@use 'apply-theme-color' as *;
+
+// Styled list mixin
+// Checkmark lists for positive items
+
+@mixin styled-list($small: false) {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: get-size('300');
+
+  li {
+    line-height: 1.5;
+    padding-left: get-size('500');
+    position: relative;
+
+    @if $small {
+      font-size: get-size('300');
+      @include media-query('md') {
+        font-size: get-size('400');
+      }
+    } @else {
+      font-size: get-size('400');
+    }
+
+    &::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      font-weight: 700;
+      @include apply-theme-color('color', get-color('tertiary'), get-color('tertiary-glare'));
+    }
+  }
+}
+
+// Negative styled list mixin (X marks)
+@mixin styled-list-negative {
+  li::before {
+    content: '✗';
+    @include apply-theme-color('color', get-color('quinary'), get-color('quinary-glare'));
+  }
+}
+
+// Muted text mixin
+@mixin text-muted {
+  @include apply-theme-color('color', get-color('dark-glare'), get-color('light-shade'));
+}

@@ -26,19 +26,13 @@
     flex: 1;
 
     p {
-      @include apply-theme-color('color', get-color('dark-glare'), get-color('light-shade'));
+      @include text-muted;
     }
   }
 
   &__title {
-    font-size: get-size('700');
-    font-weight: 700;
-    line-height: 1.2;
-    @include apply-theme-color('color', get-color('dark'), get-color('light'));
-
-    @include media-query('md') {
-      font-size: get-size('800');
-    }
+    margin-bottom: get-size('500');
+    @include section-title($centered: false, $color-style: 'default');
   }
 
   &__image {
@@ -67,20 +61,13 @@
 // About Story
 .about-story {
   &__title {
-    font-size: get-size('700');
-    font-weight: 700;
     margin-bottom: get-size('600');
-    @include apply-theme-color('color', get-color('primary'), get-color('secondary-glare'));
-
-    @include media-query('md') {
-      font-size: get-size('800');
-    }
+    @include section-title($centered: false);
   }
 
   &__content {
-    
     p, li {
-      @include apply-theme-color('color', get-color('dark-glare'), get-color('light-shade'));
+      @include text-muted;
     }
 
     ul {
@@ -89,7 +76,6 @@
 
       li {
         margin-bottom: get-size('300');
-        position: relative;
 
         &::marker {
           @include apply-theme-color('color', get-color('secondary'), get-color('secondary-glare'));
@@ -102,20 +88,13 @@
 // About Why
 .about-why {
   &__title {
-    font-size: get-size('700');
-    font-weight: 700;
     margin-bottom: get-size('600');
-    @include apply-theme-color('color', get-color('primary'), get-color('secondary-glare'));
-
-    @include media-query('md') {
-      font-size: get-size('800');
-    }
+    @include section-title($centered: false);
   }
 
   &__content {
-    
     p, li {
-      @include apply-theme-color('color', get-color('dark-glare'), get-color('light-shade'));
+      @include text-muted;
     }
 
     ul {
@@ -136,14 +115,8 @@
 // About Expertise
 .about-expertise {
   &__title {
-    font-size: get-size('700');
-    font-weight: 700;
     margin-bottom: get-size('600');
-    @include apply-theme-color('color', get-color('primary'), get-color('secondary-glare'));
-
-    @include media-query('md') {
-      font-size: get-size('800');
-    }
+    @include section-title($centered: false);
   }
 
   &__content {
@@ -163,7 +136,7 @@
     @include apply-theme-color('background', get-color('light-shade'), get-color('dark-shade'));
 
     p, li {
-      @include apply-theme-color('color', get-color('dark-glare'), get-color('light-shade'));
+      @include text-muted;
     }
 
     p {
@@ -196,21 +169,15 @@
 // About Process
 .about-process {
   &__title {
-    font-size: get-size('700');
-    font-weight: 700;
     margin-bottom: get-size('600');
-    @include apply-theme-color('color', get-color('primary'), get-color('secondary-glare'));
-
-    @include media-query('md') {
-      font-size: get-size('800');
-    }
+    @include section-title($centered: false);
   }
 
   &__intro {
-        margin-bottom: get-size('600');
+    margin-bottom: get-size('600');
 
     p {
-      @include apply-theme-color('color', get-color('dark-glare'), get-color('light-shade'));
+      @include text-muted;
       margin-bottom: get-size('400');
     }
   }
@@ -230,28 +197,21 @@
   }
 
   &__closing {
-        margin-top: get-size('600');
-    @include apply-theme-color('color', get-color('dark-glare'), get-color('light-shade'));
+    margin-top: get-size('600');
+    @include text-muted;
   }
 }
 
 // About Personal
 .about-personal {
   &__title {
-    font-size: get-size('700');
-    font-weight: 700;
     margin-bottom: get-size('600');
-    @include apply-theme-color('color', get-color('primary'), get-color('secondary-glare'));
-
-    @include media-query('md') {
-      font-size: get-size('800');
-    }
+    @include section-title($centered: false);
   }
 
   &__content {
-    
     p, li {
-      @include apply-theme-color('color', get-color('dark-glare'), get-color('light-shade'));
+      @include text-muted;
     }
 
     ul {

@@ -1,0 +1,29 @@
+@use '../functions' as *;
+@use '../mixins' as *;
+
+// Section spacing utilities
+// Standardizes vertical padding across page sections
+
+.section {
+  padding-block: get-size('500');
+
+  @include media-query('md') {
+    padding-block: get-size('700');
+  }
+}
+
+.section--compact {
+  padding-block: get-size('400');
+
+  @include media-query('md') {
+    padding-block: get-size('600');
+  }
+}
+
+.section--hero {
+  padding-block: get-size('800');
+
+  @include media-query('md') {
+    padding-block: get-size('900');
+  }
+}

@@ -97,6 +97,15 @@
     }
   }
 
+  &__nav-cta {
+    margin: get-size('400');
+    text-align: center;
+
+    @include media-query('md') {
+      display: none;
+    }
+  }
+
   &__hamburger {
     display: flex;
     flex-direction: column;

@@ -1,0 +1,29 @@
+@use '../../functions' as *;
+@use '../../mixins' as *;
+
+.note {
+  padding: get-size('500');
+  border-radius: get-size('400');
+  text-wrap: pretty;
+  @include apply-theme-color('background', get-color('light-shade'), get-color('dark-shade'));
+  @include apply-theme-color('color', get-color('dark-glare'), get-color('light-shade'));
+
+  &--accent {
+    border-left: 4px solid;
+    @include apply-theme-color('border-color', get-color('primary'), get-color('secondary-glare'));
+  }
+
+  &__title {
+    display: block;
+    margin-bottom: get-size('300');
+    @include apply-theme-color('color', get-color('primary'), get-color('secondary-glare'));
+  }
+
+  &__text {
+    margin: 0;
+
+    &:not(:first-child) {
+      margin-top: get-size('300');
+    }
+  }
+}

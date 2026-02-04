@@ -58,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
           duration: 0.5,
           ease: 'power2.out',
           stagger: 0.15,
+          clearProps: 'transform',
           scrollTrigger: {
             trigger: container,
             start: 'top 80%',

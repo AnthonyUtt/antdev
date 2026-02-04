@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 220" fill="none">
+  <!-- Background decorative elements -->
+  <circle cx="150" cy="110" r="90" fill="#552e84" opacity="0.08"/>
+
+  <!-- Left figure (Client - gesturing) -->
+  <g>
+    <!-- Body -->
+    <rect x="70" y="100" width="50" height="70" rx="20" fill="#0061ab"/>
+    <!-- Head -->
+    <circle cx="95" cy="75" r="25" fill="#ff7f5c"/>
+    <!-- Arm gesturing up -->
+    <rect x="115" y="85" width="35" height="12" rx="6" fill="#0061ab" transform="rotate(-35 115 91)"/>
+    <!-- Simple face features -->
+    <circle cx="88" cy="72" r="3" fill="#333333"/>
+    <circle cx="102" cy="72" r="3" fill="#333333"/>
+    <path d="M88 82 Q95 88 102 82" stroke="#333333" stroke-width="2" stroke-linecap="round" fill="none"/>
+  </g>
+
+  <!-- Speech bubble from left figure -->
+  <g>
+    <rect x="130" y="35" width="55" height="35" rx="10" fill="#1ba09c" opacity="0.9"/>
+    <polygon points="135,70 145,70 138,82" fill="#1ba09c" opacity="0.9"/>
+    <!-- Dots in speech bubble -->
+    <circle cx="145" cy="52" r="4" fill="white"/>
+    <circle cx="157" cy="52" r="4" fill="white"/>
+    <circle cx="169" cy="52" r="4" fill="white"/>
+  </g>
+
+  <!-- Right figure (Ant - listening) -->
+  <g>
+    <!-- Body -->
+    <rect x="180" y="105" width="50" height="65" rx="20" fill="#552e84"/>
+    <!-- Head -->
+    <circle cx="205" cy="80" r="25" fill="#FAF5FF" stroke="#552e84" stroke-width="3"/>
+    <!-- Arm in relaxed position -->
+    <rect x="175" y="118" width="12" height="30" rx="6" fill="#552e84" transform="rotate(15 175 118)"/>
+    <!-- Simple face features - attentive expression -->
+    <circle cx="198" cy="77" r="3" fill="#333333"/>
+    <circle cx="212" cy="77" r="3" fill="#333333"/>
+    <path d="M198 88 Q205 92 212 88" stroke="#333333" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <!-- Small glasses/thoughtful element -->
+    <rect x="194" y="74" width="10" height="7" rx="2" fill="none" stroke="#552e84" stroke-width="1.5"/>
+    <rect x="208" y="74" width="10" height="7" rx="2" fill="none" stroke="#552e84" stroke-width="1.5"/>
+    <line x1="204" y1="77" x2="208" y2="77" stroke="#552e84" stroke-width="1.5"/>
+  </g>
+
+  <!-- Small decorative elements -->
+  <circle cx="55" cy="140" r="8" fill="#1ba09c" opacity="0.4"/>
+  <circle cx="245" cy="50" r="6" fill="#ff7f5c" opacity="0.5"/>
+  <circle cx="260" cy="150" r="10" fill="#0061ab" opacity="0.3"/>
+</svg>

@@ -19,10 +19,6 @@ function setDarkMode(darkMode) {
       element.checked = false;
     });
   }
-  // Update Cal.com embed theme if present
-  if (typeof window.updateCalTheme === 'function') {
-    window.updateCalTheme();
-  }
 }
 
 function toggleDarkMode() {

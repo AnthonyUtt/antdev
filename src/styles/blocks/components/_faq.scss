@@ -37,7 +37,7 @@
     align-items: center;
     
     &:hover {
-      color: get-color('secondary');
+      @include apply-theme-color('color', get-color('secondary'), get-color('secondary-glare'));
     }
   }
   

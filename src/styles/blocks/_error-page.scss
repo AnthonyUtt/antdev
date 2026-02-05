@@ -1,0 +1,67 @@
+@use '../functions' as *;
+@use '../mixins' as *;
+
+.error-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 60vh;
+  padding: get-size('800') get-size('500');
+
+  &__code {
+    font-family: get-config-value('font', 'accent');
+    font-size: clamp(6rem, 20vw, 12rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    background: linear-gradient(
+      135deg,
+      get-color('primary') 0%,
+      get-color('secondary') 50%,
+      get-color('tertiary') 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0.9;
+
+    html.dark & {
+      background: linear-gradient(
+        135deg,
+        get-color('primary-glare') 0%,
+        get-color('secondary-glare') 50%,
+        get-color('tertiary-glare') 100%
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+  }
+
+  &__title {
+    font-size: get-size('700');
+    font-weight: 700;
+    margin-top: get-size('400');
+    @include apply-theme-color('color', get-color('dark'), get-color('light'));
+
+    @include media-query('md') {
+      font-size: get-size('800');
+    }
+  }
+
+  &__message {
+    font-size: get-size('500');
+    max-width: 40ch;
+    margin-top: get-size('400');
+    @include text-muted;
+
+    @include media-query('md') {
+      font-size: get-size('600');
+    }
+  }
+
+  .button {
+    margin-top: get-size('600');
+  }
+}

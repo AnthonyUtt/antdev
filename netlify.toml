@@ -1,6 +1,6 @@
 # Proxy analytics scripts
 [[redirects]]
-  from = "/umami.js"
+  from = "/script.js"
   to = "https://cloud.umami.is/script.js"
   status = 200
   force = true

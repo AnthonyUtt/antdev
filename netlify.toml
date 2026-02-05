@@ -1,3 +1,10 @@
+# Proxy analytics scripts
+[[redirects]]
+  from = "/umami.js"
+  to = "https://cloud.umami.is/script.js"
+  status = 200
+  force = true
+
 # HTTPS
 [[redirects]]
   from = "https://anthonyutt.dev"

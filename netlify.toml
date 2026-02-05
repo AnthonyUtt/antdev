@@ -1,3 +1,4 @@
+# HTTPS
 [[redirects]]
   from = "https://anthonyutt.dev"
   to = "https://antdev.sh"
@@ -5,7 +6,32 @@
   force = true
 
 [[redirects]]
+  from = "https://www.anthonyutt.dev"
+  to = "https://antdev.sh"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "https://gentle-paprenjak-4a1cca.netlify.app"
+  to = "https://antdev.sh"
+  status = 301
+  force = true
+
+# HTTP
+[[redirects]]
+  from = "http://anthonyutt.dev"
+  to = "https://antdev.sh"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.anthonyutt.dev"
+  to = "https://antdev.sh"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://gentle-paprenjak-4a1cca.netlify.app"
   to = "https://antdev.sh"
   status = 301
   force = true

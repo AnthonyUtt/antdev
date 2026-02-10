@@ -1,4 +1,5 @@
 @use '../../functions' as *;
+@use '../../mixins' as *;
 
 .button {
   display: inline-block;
@@ -25,9 +26,19 @@
   &--secondary {
     background: get-color('secondary');
     color: white;
-    
+
     &:hover {
       background: get-color('secondary-shade');
+      transform: translateY(-2px);
+    }
+  }
+
+  &--theme {
+    @include apply-theme-color('background', get-color('primary'), get-color('secondary'));
+    color: white;
+
+    &:hover {
+      @include apply-theme-color('background', get-color('primary-shade'), get-color('secondary-shade'));
       transform: translateY(-2px);
     }
   }

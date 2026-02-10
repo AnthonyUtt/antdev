@@ -10,7 +10,7 @@
   "headline": "{{ title }}",
   "description": "{{ excerpt | default: metaDesc }}",
   "datePublished": "{{ date | w3DateFilter }}",
-  "dateModified": "{{ date | w3DateFilter }}",
+  "dateModified": "{{ dateModified | default: date | w3DateFilter }}",
   {% if coverImage %}"image": "{{ site.baseUrl }}{{ coverImage }}",{% endif %}
   "author": {
     "@type": "Person",

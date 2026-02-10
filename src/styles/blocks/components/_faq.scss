@@ -26,6 +26,7 @@
     background: none;
     border: none;
     text-align: left;
+    text-transform: lowercase;
     font-size: get-size('500');
     font-weight: 600;
     @include apply-utility('font', 'accent');

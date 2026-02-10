@@ -141,7 +141,7 @@
   }
 
   &__title {
-    font-size: get-size('900');
+    font-size: get-size('800');
     @include apply-theme-color('color', get-color('primary'), get-color('secondary-glare'));
     line-height: 1.2;
     margin-block-end: get-size('400');

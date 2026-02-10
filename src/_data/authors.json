@@ -1,0 +1,11 @@
+{
+  "ant": {
+    "name": "Anthony \"Ant\" Utt",
+    "bio": [
+      "Ant is the founder of AntDev, a software shop in Roanoke, VA that builds websites and custom tools for small businesses. With 10 years of experience solving real-world problems with technology, he writes about the tools, workflows, and decisions that help small teams get more done with less overhead.",
+      "He was named a 2021 BuiltIn Tech Innovator for his work in e-commerce tooling. These days he splits his time between his day job at an AI startup, building useful tools in his free time, tinkering with electronics and machines, and spending quality time with his family."
+    ],
+    "image": "/assets/images/headshot.png",
+    "url": "https://antdev.sh/about/"
+  }
+}

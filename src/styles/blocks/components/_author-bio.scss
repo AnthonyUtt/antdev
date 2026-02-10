@@ -1,0 +1,54 @@
+@use '../../functions' as *;
+@use '../../mixins' as *;
+
+.author-bio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: get-size('500');
+  padding: get-size('600');
+  margin-block: get-size('700');
+  border-radius: 0.5rem;
+  @include apply-theme-color('background-color', get-color('light-shade'), get-color('dark-shade'));
+
+  @include media-query('md') {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  &__photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  &__info {
+    flex: 1;
+  }
+
+  &__name {
+    font-weight: 700;
+    font-size: get-size('500');
+    @include apply-utility('font', 'accent');
+    margin: 0;
+
+    a {
+      text-decoration: none;
+      @include apply-theme-color('color', get-color('secondary'), get-color('secondary-glare'));
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__text {
+    font-size: get-size('400');
+    line-height: 1.6;
+    margin: get-size('300') 0 0;
+  }
+}

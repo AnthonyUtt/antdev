@@ -2,13 +2,27 @@
 layout: pages/post
 title: How to Audit Your Own Website in 15 Minutes
 date: 2026-01-12
+dateModified: 2026-02-10
 author: Ant
 excerpt: "A quick, practical checklist to find the most common website problems before your customers do."
 metaDesc: "A 15-minute website audit checklist for small business owners. Find broken links, mobile issues, and missed opportunities without any technical expertise."
 coverImage: /assets/images/blog/website-audit.jpg
 tags:
-  - guide
-  - websites
+  - website-audit
+  - seo-checklist
+  - website-performance
+keywords:
+  - website audit checklist
+  - how to audit a website
+  - website health check
+  - mobile website testing
+postFaq:
+  - question: "How often should I audit my website?"
+    answer: "A quick audit like the one in this article is worth doing every quarter. If you make frequent changes to your site, monthly is even better. The goal is to catch problems before your customers do."
+  - question: "Do I need technical skills to audit my website?"
+    answer: "Not for this checklist. Everything here can be done with a browser and your phone. If the audit turns up issues that require code changes or server configuration, that's when you might want to bring in help."
+  - question: "What's the most important thing to fix first?"
+    answer: "Anything that prevents customers from contacting you. A broken contact form or missing phone number is an emergency. After that, prioritize mobile usability and page speed, since those affect both user experience and search rankings."
 ---
 
 I look at small business websites around Roanoke all the time. It's one of the first things I do before reaching out to a potential client. And honestly, the two most common things I see are sites running on WordPress templates from 20 years ago and sites that clearly have never been tested on a phone.
@@ -17,7 +31,7 @@ The thing is, most business owners don't look at their own site the way a custom
 
 This 15-minute audit won't catch everything, but it'll help you find the most common problems before your customers do. All you need is a browser and your phone.
 
-## The First Impression Test (2 minutes)
+## Mobile First Impression Test (2 minutes)
 
 Open your website on your phone. Not your laptop, your actual phone. This is how most people will see your site.
 
@@ -29,9 +43,9 @@ Ask yourself:
 
 If your site takes more than 3-4 seconds to load on mobile, you're losing visitors. You can check your exact load time at [PageSpeed Insights](https://pagespeed.web.dev/) - just paste in your URL. That's one of many [free tools](/articles/free-tools-every-small-business-should-know-about/) that can help you understand how your site is performing.
 
-## The "Can They Find You?" Check (3 minutes)
+## Google Search Visibility Check (3 minutes)
 
-Open a private/incognito browser window and Google your business name. Look at what shows up:
+Here's a quick gut check: open a private/incognito browser window and Google your business name. What shows up?
 
 - **Does your website appear?** It should be one of the first results for your exact business name.
 - **What does the preview text say?** This is your page title and meta description. If it says something generic like "Home" or shows random text from your page, that's a missed opportunity.
@@ -39,9 +53,9 @@ Open a private/incognito browser window and Google your business name. Look at w
 
 Click through to your site from Google. Does the page you land on match what the search result promised?
 
-## The Broken Stuff Scan (3 minutes)
+## Broken Links and Forms Scan (3 minutes)
 
-This is tedious but important. Click through your site like a visitor would:
+Nobody loves this part, but it catches real problems. Go through your site like a visitor would:
 
 - **Click every navigation link.** Do they all work? Do they go where you expect?
 - **Test your contact form.** Actually fill it out and submit it. Did you receive the message? You'd be surprised how often contact forms silently break.
@@ -50,7 +64,7 @@ This is tedious but important. Click through your site like a visitor would:
 
 If you find broken links or forms, fix them immediately. A broken contact form means potential customers are trying to reach you and can't.
 
-## The Mobile Experience (3 minutes)
+## Mobile Usability Test (3 minutes)
 
 Still on your phone, try to actually use your site:
 
@@ -60,17 +74,17 @@ Still on your phone, try to actually use your site:
 
 If you find yourself pinching, zooming, or struggling to tap things, your mobile visitors are having the same experience. And they're probably leaving.
 
-## The Trust Signals Review (2 minutes)
+## Trust Signals and Credibility Check (2 minutes)
 
-Small details matter. Check for:
+These are the little things that quietly erode trust. Look for:
 
 - **Copyright year.** Scroll to the bottom. If it says 2019, visitors might wonder if you're still in business.
 - **Testimonials or reviews.** Do you have any on your site? Can visitors see proof that other people have worked with you?
 - **SSL certificate.** Look for the padlock icon in your browser's address bar. If visitors see "Not Secure" warnings, they're not going to trust you with their contact info.
 
-## The Action Check (2 minutes)
+## Call-to-Action Clarity Check (2 minutes)
 
-Finally, pretend you're a potential customer who just landed on your site:
+Last one. Put yourself in a potential customer's shoes — they just landed on your site for the first time:
 
 - **Is it clear what you want them to do?** Call you? Fill out a form? Visit your store?
 - **Can they do it easily?** Your main call-to-action should be reachable within one or two clicks from any page.

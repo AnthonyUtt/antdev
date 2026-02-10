@@ -1,3 +1,4 @@
 {
-  "permalink": "/articles/{{ page.fileSlug }}/"
+  "permalink": "/articles/{{ page.fileSlug }}/",
+  "ogType": "article"
 }

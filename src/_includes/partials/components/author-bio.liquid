@@ -1,0 +1,15 @@
+{% assign authorKey = author | downcase %}
+{% assign authorData = authors[authorKey] %}
+{% if authorData %}
+<aside class="author-bio" aria-label="About the author">
+  <img src="{{ authorData.image }}" alt="{{ authorData.name }}" class="author-bio__photo" width="120" height="120" loading="lazy">
+  <div class="author-bio__info">
+    <p class="author-bio__name">
+      {% if authorData.url %}<a href="{{ authorData.url }}">{{ authorData.name }}</a>{% else %}{{ authorData.name }}{% endif %}
+    </p>
+    {% for paragraph in authorData.bio %}
+    <p class="author-bio__text">{{ paragraph }}</p>
+    {% endfor %}
+  </div>
+</aside>
+{% endif %}

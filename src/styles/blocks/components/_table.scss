@@ -1,0 +1,43 @@
+@use '../../functions' as *;
+@use '../../mixins' as *;
+
+.post__content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-block: get-size('600');
+  font-size: get-size('400');
+  overflow-x: auto;
+  display: block;
+
+  @include media-query('md') {
+    display: table;
+  }
+
+  thead {
+    @include apply-theme-color('background-color', get-color('light-shade'), get-color('dark-shade'));
+
+    th {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      text-transform: lowercase;
+      font-weight: 700;
+      @include apply-utility('font', 'accent');
+      white-space: nowrap;
+    }
+  }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid get-color('light-shade');
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    td {
+      padding: 0.75rem 1rem;
+      vertical-align: top;
+    }
+  }
+}

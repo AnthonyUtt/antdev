@@ -1,3 +1,9 @@
 {% for link in site.navigation %}
+  {% if headerOnly == true %}
+    {% if link.showInHeader %}
   <a class="nav-link" href="{{ link.url }}" {% getLinkActiveState link.url, page.url %}>{{ link.text }}</a>
+    {% endif %}
+  {% else %}
+  <a class="nav-link" href="{{ link.url }}" {% getLinkActiveState link.url, page.url %}>{{ link.text }}</a>
+  {% endif %}
 {% endfor %}

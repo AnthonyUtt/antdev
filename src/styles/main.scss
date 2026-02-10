@@ -31,8 +31,17 @@ body {
 }
 
 a:not([class]) {
-	color: currentColor;
-	text-decoration-color: get-color('secondary');
+	text-decoration: none;
+	text-underline-offset: 0.2em;
+	transition: color 0.2s ease, text-decoration-color 0.2s ease;
+	@include apply-theme-color('color', get-color('primary'), get-color('tertiary-glare'));
+  font-weight: bold;
+
+	&:hover {
+    @include apply-theme-color('color', get-color('primary-glare'), get-color('tertiary'));
+		@include apply-theme-color('text-decoration-color', get-color('primary'), get-color('tertiary-glare'));
+		text-decoration: underline;
+	}
 }
 
 main:focus {

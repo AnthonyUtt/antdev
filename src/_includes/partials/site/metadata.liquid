@@ -1,7 +1,7 @@
 {% if customTitle == true %}
   {% assign pageTitle = title %}
 {% else %}
-  {% assign pageTitle = [title, site.name] | join: ' | ' %}
+  {% assign pageTitle = title | append: ' | ' | append: site.name %}
 {% endif %}
 
 {% assign siteTitle = site.name %}
@@ -22,6 +22,7 @@ them into the mix.
 
 <title>{{ pageTitle }}</title>
 <link rel="canonical" href="{{ currentUrl }}">
+<link rel="alternate" type="application/atom+xml" title="{{ siteTitle }} Blog" href="{{ site.baseUrl }}/feed.xml">
 {% if noindex %}
 <meta name="robots" content="noindex, nofollow">
 {% endif %}

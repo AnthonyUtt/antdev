@@ -1,3 +1,7 @@
+[build]
+  command = "curl -sL https://github.com/typst/typst/releases/download/v0.14.2/typst-x86_64-unknown-linux-musl.tar.xz | tar xJ && export PATH=\"$PWD/typst-x86_64-unknown-linux-musl:$PATH\" && pnpm run build"
+  publish = "public"
+
 # Proxy analytics scripts
 [[redirects]]
   from = "/script.js"

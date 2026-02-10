@@ -2,26 +2,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>{{ title }}</title>
-	<subtitle>{{ summary }}</subtitle>
-	<link href="{{ site.url }}{{ permalink }}" rel="self"/>
-	<link href="{{ site.url }}/"/>
-	<updated>{{ collections.blog | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
-	<id>{{ site.url }}</id>
-	<author>
+  <subtitle>{{ summary }}</subtitle>
+  <link href="{{ site.baseUrl }}/feed.xml" rel="self"/>
+  <link href="{{ site.baseUrl }}/"/>
+  <id>{{ site.baseUrl }}/</id>
+  <author>
     <name>{{ site.authorName }}</name>
     <email>{{ site.authorEmail }}</email>
-	</author>
-	{% for post in targetCollection %}
-    {% capture absolutePostUrl %}{{ site.url }}{{ post.url | url }}{% endcapture %}
-    <entry>
-      <title>{{ post.data.title }}</title>
-      <link href="{{ absolutePostUrl }}"/>
-      <updated>{{ post.date | dateToRfc3339 }}</updated>
-      <id>{{ absolutePostUrl }}</id>
-      <content type="html"><![CDATA[
-        {{ post.templateContent | safe }}
-      ]]></content>
-    </entry>
-	{% endfor %}
+  </author>
+  {%- if targetCollection.size > 0 %}
+  <updated>{{ targetCollection.first.date | isoDateFilter | append: "T00:00:00Z" }}</updated>
+  {%- endif %}
+  {%- for post in targetCollection %}
+  <entry>
+    <title>{{ post.data.title }}</title>
+    <link href="{{ site.baseUrl }}{{ post.url }}"/>
+    <updated>{{ post.date | isoDateFilter | append: "T00:00:00Z" }}</updated>
+    <id>{{ site.baseUrl }}{{ post.url }}</id>
+    {%- if post.data.excerpt %}
+    <summary>{{ post.data.excerpt }}</summary>
+    {%- endif %}
+    <content type="html"><![CDATA[{{ post.templateContent }}]]></content>
+  </entry>
+  {%- endfor %}
 </feed>
 {% endif %}

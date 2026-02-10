@@ -1,0 +1,37 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{ site.baseUrl }}{{ page.url }}#article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ site.baseUrl }}{{ page.url }}"
+  },
+  "headline": "{{ title }}",
+  "description": "{{ excerpt | default: metaDesc }}",
+  "datePublished": "{{ date | w3DateFilter }}",
+  "dateModified": "{{ date | w3DateFilter }}",
+  {% if coverImage %}"image": "{{ site.baseUrl }}{{ coverImage }}",{% endif %}
+  "author": {
+    "@type": "Person",
+    "name": "{% if author %}{{ author }}{% else %}{{ site.authorName }}{% endif %}",
+    "url": "{{ site.baseUrl }}/about/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "{{ site.baseUrl }}/#organization",
+    "name": "{{ site.name }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ site.baseUrl }}/assets/images/logo.png"
+    }
+  },
+  "isPartOf": {
+    "@type": "Blog",
+    "@id": "{{ site.baseUrl }}/blog/#blog",
+    "name": "{{ site.name }} Blog",
+    "url": "{{ site.baseUrl }}/blog/"
+  }{% if tags.size > 0 or keywords.size > 0 %},
+  "keywords": "{% for tag in tags %}{{ tag }}{% if forloop.last == false or keywords.size > 0 %}, {% endif %}{% endfor %}{% for keyword in keywords %}{{ keyword }}{% unless forloop.last %}, {% endunless %}{% endfor %}"{% endif %}
+}
+</script>

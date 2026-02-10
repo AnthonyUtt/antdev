@@ -1,0 +1,33 @@
+<div class="note note--accent">
+  <strong class="note__title">{{ heading }}</strong>
+  <p class="note__text">{{ description }}</p>
+  <form
+    name="{{ formName }}"
+    action="/download/{{ resourceSlug }}/"
+    method="POST"
+    data-netlify="true"
+    netlify-honeypot="bot-field"
+    class="[ lead-magnet-form ]"
+  >
+    <input type="hidden" name="form-name" value="{{ formName }}">
+    <input type="hidden" name="resource" value="{{ resourceSlug }}">
+    <p class="[ visually-hidden ]">
+      <label>Don't fill this out if you're human: <input name="bot-field"></label>
+    </p>
+    <div class="[ lead-magnet-form__fields ]">
+      <label for="{{ formName }}-email" class="[ visually-hidden ]">Email address</label>
+      <input
+        type="email"
+        id="{{ formName }}-email"
+        name="email"
+        required
+        autocomplete="email"
+        placeholder="you@example.com"
+        class="[ lead-magnet-form__input ]"
+      >
+      <button type="submit" class="[ lead-magnet-form__submit ] [ button button--primary ]" data-umami-event="lead-magnet-{{ formName }}">
+        Send it to me
+      </button>
+    </div>
+  </form>
+</div>

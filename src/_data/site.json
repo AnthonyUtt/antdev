@@ -11,15 +11,23 @@
   "navigation": [
     {
       "text": "Home",
-      "url": "/"
+      "url": "/",
+      "showInHeader": true
     },
     {
       "text": "About",
-      "url": "/about/"
+      "url": "/about/",
+      "showInHeader": true
     },
     {
       "text": "Services",
-      "url": "/services/"
+      "url": "/services/",
+      "showInHeader": true
+    },
+    {
+      "text": "Blog",
+      "url": "/blog/",
+      "showInHeader": false
     }
   ]
 }

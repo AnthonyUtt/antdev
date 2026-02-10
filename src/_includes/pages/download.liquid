@@ -1,0 +1,21 @@
+{% layout 'layouts/page' %}
+
+{% block content %}
+<main id="main-content" tabindex="-1">
+  <section class="[ error-page ] [ flow ]">
+    <span class="[ error-page__code ]" style="background: linear-gradient(135deg, #1ba09c 0%, #0061ab 50%, #552e84 100%); -webkit-background-clip: text; background-clip: text;">&#8595;</span>
+    <h1 class="[ error-page__title ]">Here's your download!</h1>
+    <p class="[ error-page__message ]">
+      Thanks for signing up. Your resource is ready.
+    </p>
+    <a href="{{ resourceUrl }}" class="[ button button--primary ]" download data-umami-event="download-{{ resourceSlug }}">
+      Download {{ resourceTitle }}
+    </a>
+    {% if backLink %}
+    <p style="margin-top: 1.5rem;">
+      <a href="{{ backLink }}">&larr; Back to the article</a>
+    </p>
+    {% endif %}
+  </section>
+</main>
+{% endblock %}

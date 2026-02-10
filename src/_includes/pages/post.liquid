@@ -1,0 +1,117 @@
+{% layout 'layouts/page' %}
+
+{% block content %}
+<main id="main-content" tabindex="-1">
+  <article class="[ post ]">
+    {% if coverImage %}
+    <div class="[ post__hero ]">
+      {% responsiveImage coverImage, "", "100vw", "post__hero-image" %}
+      {% if coverImageAttribution %}
+      <p class="[ post__hero-attribution ]">
+        Photo by {% if coverImageAttributionUrl %}<a href="{{ coverImageAttributionUrl }}" class="[ post__hero-attribution-link ]" target="_blank" rel="noopener">{{ coverImageAttribution }}</a>{% else %}{{ coverImageAttribution }}{% endif %}{% if coverImageSource %} on {% if coverImageSourceUrl %}<a href="{{ coverImageSourceUrl }}" class="[ post__hero-attribution-link ]" target="_blank" rel="noopener">{{ coverImageSource }}</a>{% else %}{{ coverImageSource }}{% endif %}{% endif %}
+      </p>
+      {% endif %}
+    </div>
+    {% endif %}
+    <div class="[ wrapper ]">
+      <header class="[ post__header ]">
+        <a href="/blog/">&larr; Back to Blog</a>
+        <h1 class="[ post__title ]">{{ title }}</h1>
+        {% if excerpt %}
+        <p class="[ post__excerpt ]">{{ excerpt }}</p>
+        {% endif %}
+        <div class="[ post__meta ]">
+          <span>{{ date | isoDateFilter }}</span>
+          <span class="[ post__meta-separator ]">/</span>
+          <span>{% if author %}{{ author }}{% else %}{{ site.name }}{% endif %}</span>
+          {% if tags.size > 0 %}
+          <span class="[ post__meta-separator ]">/</span>
+          {% for tag in tags %}<span class="[ tag ]">{{ tag }}</span>{% endfor %}
+          {% endif %}
+        </div>
+      </header>
+      <div class="[ post__content ] [ flow ]">
+        {{ content }}
+      </div>
+
+      {% comment %} Previous/Next Navigation {% endcomment %}
+      {% assign posts = collections.blog %}
+      {% assign prevPost = nil %}
+      {% assign nextPost = nil %}
+      {% for post in posts %}
+        {% if post.url == page.url %}
+          {% assign prevIndex = forloop.index %}
+          {% assign nextIndex = forloop.index0 | minus: 1 %}
+          {% if prevIndex < posts.size %}
+            {% assign prevPost = posts[prevIndex] %}
+          {% endif %}
+          {% if nextIndex >= 0 %}
+            {% assign nextPost = posts[nextIndex] %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+
+      {% if prevPost or nextPost %}
+      <nav class="[ post__nav ]" aria-label="Post navigation">
+        <div class="[ post__nav-item post__nav-item--prev ]">
+          {% if prevPost %}
+          <a href="{{ prevPost.url }}" class="[ post__nav-link ]">
+            <span class="[ post__nav-label ]">Previous</span>
+            <span class="[ post__nav-title ]">{{ prevPost.data.title }}</span>
+          </a>
+          {% endif %}
+        </div>
+        <div class="[ post__nav-item post__nav-item--next ]">
+          {% if nextPost %}
+          <a href="{{ nextPost.url }}" class="[ post__nav-link ]">
+            <span class="[ post__nav-label ]">Next</span>
+            <span class="[ post__nav-title ]">{{ nextPost.data.title }}</span>
+          </a>
+          {% endif %}
+        </div>
+      </nav>
+      {% endif %}
+
+      {% comment %} Related Posts {% endcomment %}
+      {% assign relatedPosts = collections.blog | getSiblingContent: page, 3 %}
+      {% if relatedPosts.size > 0 %}
+      <section class="[ post__related ]">
+        <h2 class="[ post__related-title ]">More Posts</h2>
+        <ul class="[ post__related-list ]">
+          {% for relatedPost in relatedPosts %}
+          <li class="[ post__related-item ]">
+            <a href="{{ relatedPost.url }}" class="[ card card--link card--small ]">
+              {% if relatedPost.data.coverImage %}
+              <div class="[ card__image ]">
+                {% responsiveImage relatedPost.data.coverImage, "", "(min-width: 62em) 25vw, (min-width: 37em) 33vw, 100vw" %}
+              </div>
+              {% endif %}
+              <div class="[ card__content ]">
+                <h3 class="[ card__title ]">{{ relatedPost.data.title }}</h3>
+                <div class="[ card__meta ]">
+                  <span>{{ relatedPost.data.date | isoDateFilter }}</span>
+                  <span class="[ card__meta-separator ]">/</span>
+                  <span>{% if relatedPost.data.author %}{{ relatedPost.data.author }}{% else %}{{ site.name }}{% endif %}</span>
+                </div>
+                {% if relatedPost.data.excerpt %}
+                <p class="[ card__body ]">{{ relatedPost.data.excerpt }}</p>
+                {% endif %}
+                {% if relatedPost.data.tags.size > 0 %}
+                <div class="[ card__tags ]">
+                  {% for tag in relatedPost.data.tags %}
+                  <span class="[ tag ]">{{ tag }}</span>
+                  {% endfor %}
+                </div>
+                {% endif %}
+              </div>
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </section>
+      {% endif %}
+    </div>
+  </article>
+  {% include 'partials/schema/blog-posting' %}
+</main>
+{% endblock %}

@@ -1,0 +1,55 @@
+@use '../../functions' as *;
+@use '../../mixins' as *;
+
+.lead-magnet-form {
+  margin-top: get-size('400');
+
+  &__fields {
+    display: flex;
+    flex-direction: column;
+    gap: get-size('300');
+
+    @include media-query('md') {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    padding: get-size('300') get-size('400');
+    font-size: get-size('400');
+    font-family: inherit;
+    border: 2px solid;
+    border-radius: get-size('300');
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    @include apply-theme-color('background', get-color('light-glare'), get-color('dark-shade'));
+    @include apply-theme-color('color', get-color('dark'), get-color('light'));
+    @include apply-theme-color('border-color', get-color('light-shade'), get-color('dark-glare'));
+
+    &:focus {
+      outline: none;
+      @include apply-theme-color('border-color', get-color('primary'), get-color('secondary-glare'));
+      @include apply-theme-color('box-shadow', 0 0 0 3px rgba(get-color('primary'), 0.15), 0 0 0 3px rgba(get-color('secondary-glare'), 0.15));
+    }
+
+    &::placeholder {
+      @include text-muted;
+      opacity: 0.7;
+    }
+
+    @include media-query('md') {
+      flex: 1;
+    }
+  }
+
+  &__submit {
+    white-space: nowrap;
+    width: 100%;
+
+    @include media-query('md') {
+      width: auto;
+    }
+  }
+}

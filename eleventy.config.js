@@ -5,6 +5,8 @@ import rssPlugin from '@11ty/eleventy-plugin-rss';
 import initFilters from './src/filters/index.js';
 import initShortcodes from './src/shortcodes/index.js';
 import { sortByDisplayOrder } from './src/utils/collections.js';
+import { setupImagePipeline } from './src/utils/image-pipeline.js';
+import { setupTypstPipeline } from './src/utils/typst-pipeline.js';
 
 const BASE_CONFIG = {
   dir: {
@@ -24,6 +26,8 @@ export default async function(config) {
   setupPlugins(config);
   setupAssetPassthrough(config);
   setupSassPipeline(config);
+  setupImagePipeline(config);
+  setupTypstPipeline(config);
 
   addCollections(config);
 

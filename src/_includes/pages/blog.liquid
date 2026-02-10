@@ -1,0 +1,46 @@
+{% layout 'layouts/page' %}
+
+{% block content %}
+<main id="main-content" tabindex="-1">
+  <section class="[ blog ]">
+    <div class="[ wrapper ]">
+      <header class="[ blog__header ]">
+        <h1 class="[ blog__title ]">Blog</h1>
+        <p class="[ blog__intro ]">Everything I've learned about building software for small businesses—shared openly.</p>
+      </header>
+      <ul class="[ blog__list ]">
+        {% for post in collections.blog %}
+        <li class="[ blog__item ]">
+          <a href="{{ post.url }}" class="[ card card--link ]">
+            {% if post.data.coverImage %}
+            <div class="[ card__image ]">
+              {% responsiveImage post.data.coverImage, "", "(min-width: 62em) 33vw, (min-width: 37em) 50vw, 100vw" %}
+            </div>
+            {% endif %}
+            <div class="[ card__content ]">
+              <h2 class="[ card__title ]">{{ post.data.title }}</h2>
+              <div class="[ card__meta ]">
+                <span>{{ post.data.date | isoDateFilter }}</span>
+                <span class="[ card__meta-separator ]">/</span>
+                <span>{% if post.data.author %}{{ post.data.author }}{% else %}{{ site.name }}{% endif %}</span>
+              </div>
+              {% if post.data.excerpt %}
+              <p class="[ card__body ]">{{ post.data.excerpt }}</p>
+              {% endif %}
+              {% if post.data.tags.size > 0 %}
+              <div class="[ card__tags ]">
+                {% for tag in post.data.tags %}
+                <span class="[ tag ]">{{ tag }}</span>
+                {% endfor %}
+              </div>
+              {% endif %}
+            </div>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+  {% include 'partials/schema/blog' %}
+</main>
+{% endblock %}

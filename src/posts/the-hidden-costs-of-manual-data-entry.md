@@ -51,7 +51,7 @@ And it's not just you. If you have employees doing data entry, that's their time
 
 The frustrating thing is that opportunity cost doesn't show up in any report. Nobody's going to flag it for you. You just wake up one day and realize you've been so busy keeping up with the busywork that the important stuff keeps getting pushed to next week.
 
-You didn't start your business to be a data entry clerk. But if you're not careful, that's where a surprising chunk of your week ends up going. A lot of this can be [automated without writing any code](/posts/simple-automations-you-can-set-up-today-without-code/).
+You didn't start your business to be a data entry clerk. But if you're not careful, that's where a surprising chunk of your week ends up going. A lot of this can be [automated without writing any code](/articles/simple-automations-you-can-set-up-today-without-code/).
 
 ## Where It Hides
 
@@ -75,7 +75,7 @@ A lot of data entry pain is really a spreadsheet problem in disguise. If your bu
 
 **You've hit the limits.** Maybe your spreadsheet takes 30 seconds to open. Maybe you're using nested IF statements six levels deep and even you can't remember what they do. When the workarounds become more complex than the original problem, you've outgrown the tool.
 
-If any of this sounds familiar, the fix doesn't have to be expensive. Platforms like Airtable, Notion, or even a simple database can handle what spreadsheets can't, with less effort than you'd think. I put together a list of [free tools worth looking at](/posts/free-tools-every-small-business-should-know-about/) if you want a starting point.
+If any of this sounds familiar, the fix doesn't have to be expensive. Platforms like Airtable, Notion, or even a simple database can handle what spreadsheets can't, with less effort than you'd think. I put together a list of [free tools worth looking at](/articles/free-tools-every-small-business-should-know-about/) if you want a starting point.
 
 A word of caution, though: upgrading your tools doesn't automatically fix the problem. I worked at one company that moved everything into Notion but never set up guidelines for where things should go. Within a few months there were duplicated records all over the place, no single source of truth, and eventually an entire full-time role dedicated just to keeping the Notion workspace organized. The tool was fine — the lack of a system was the issue. So if you're going to move off spreadsheets, take the time to decide how information flows before you start migrating it.
 
@@ -93,7 +93,7 @@ At the end of the week, look at what you've got and ask yourself:
 
 - **Am I entering the same information in more than one place?** If so, those systems should be connected, not bridged by a human.
 - **Could this come from a form instead of an email?** A structured form puts the data exactly where it needs to go. An email makes someone else do that work.
-- **Does this system have an integration I'm not using?** A lot of tools can talk to each other out of the box. It's worth checking before you assume they can't. I put together a [list of free tools](/posts/free-tools-every-small-business-should-know-about/) that includes several with built-in integrations.
+- **Does this system have an integration I'm not using?** A lot of tools can talk to each other out of the box. It's worth checking before you assume they can't. I put together a [list of free tools](/articles/free-tools-every-small-business-should-know-about/) that includes several with built-in integrations.
 - **Am I the only one who can do this, or is it just habit?** Sometimes we do things manually because that's how we've always done them, not because there's no other way.
 
 You might be surprised by what you find. Most people are. The total is almost always bigger than they expected, and the fixes are usually simpler than they assumed.

@@ -33,7 +33,7 @@ This tells you how your site appears in Google search results: what people are s
 
 ### PageSpeed Insights <img src="/assets/images/logo-minimal.svg" alt="AntDev logo" class="inline-logo">
 
-Paste in your URL and get a detailed report on how fast your site loads, along with specific suggestions for improvement. Speed matters more than most people think. A slow site doesn't just frustrate visitors, it can hurt your search rankings too. I put together a [15-minute website audit](/posts/how-to-audit-your-website-in-15-minutes/) that walks you through checking this and more.
+Paste in your URL and get a detailed report on how fast your site loads, along with specific suggestions for improvement. Speed matters more than most people think. A slow site doesn't just frustrate visitors, it can hurt your search rankings too. I put together a [15-minute website audit](/articles/how-to-audit-your-website-in-15-minutes/) that walks you through checking this and more.
 
 ## Design & Content
 
@@ -61,7 +61,7 @@ A simple, visual way to manage tasks and projects. Think of it as a digital bull
 
 ### Notion
 
-Part notebook, part database, part project manager. Notion is more flexible than Trello but has a steeper learning curve. If you want one place to keep meeting notes, SOPs, task lists, and reference documents, it's hard to beat. The free plan works well for solo operators and small teams. Both Notion and Trello can be solid replacements if you've [outgrown your spreadsheets](/posts/the-hidden-costs-of-manual-data-entry/).
+Part notebook, part database, part project manager. Notion is more flexible than Trello but has a steeper learning curve. If you want one place to keep meeting notes, SOPs, task lists, and reference documents, it's hard to beat. The free plan works well for solo operators and small teams. Both Notion and Trello can be solid replacements if you've [outgrown your spreadsheets](/articles/the-hidden-costs-of-manual-data-entry/).
 
 ### Calendly
 
@@ -85,7 +85,7 @@ These tools help you stop doing repetitive work by hand.
 
 ### Zapier <img src="/assets/images/logo-minimal.svg" alt="AntDev logo" class="inline-logo">
 
-Zapier connects your tools together so that when something happens in one app, something else happens automatically. New form submission? Automatically add it to your spreadsheet and send a notification. New customer? Add them to your email list. The free tier gives you basic automations with limited runs per month, but it's enough to get started. If you're curious what's possible, I wrote about [simple automations you can set up without code](/posts/simple-automations-you-can-set-up-today-without-code/).
+Zapier connects your tools together so that when something happens in one app, something else happens automatically. New form submission? Automatically add it to your spreadsheet and send a notification. New customer? Add them to your email list. The free tier gives you basic automations with limited runs per month, but it's enough to get started. If you're curious what's possible, I wrote about [simple automations you can set up without code](/articles/simple-automations-you-can-set-up-today-without-code/).
 
 ### Google Forms
 

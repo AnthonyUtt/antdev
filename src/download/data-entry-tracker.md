@@ -6,5 +6,5 @@ noindex: true
 resourceTitle: "One-Week Data Entry Tracker"
 resourceUrl: /resources/data-entry-tracker.pdf
 resourceSlug: data-entry-tracker
-backLink: /posts/the-hidden-costs-of-manual-data-entry/
+backLink: /articles/the-hidden-costs-of-manual-data-entry/
 ---

@@ -25,9 +25,9 @@
       "showInHeader": true
     },
     {
-      "text": "Blog",
-      "url": "/blog/",
-      "showInHeader": false
+      "text": "Articles",
+      "url": "/articles/",
+      "showInHeader": true
     }
   ]
 }

@@ -6,5 +6,5 @@ noindex: true
 resourceTitle: "15-Minute Website Audit Checklist"
 resourceUrl: /resources/website-audit-checklist.pdf
 resourceSlug: website-audit-checklist
-backLink: /posts/how-to-audit-your-website-in-15-minutes/
+backLink: /articles/how-to-audit-your-website-in-15-minutes/
 ---

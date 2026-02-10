@@ -6,5 +6,5 @@ noindex: true
 resourceTitle: "Is This Worth Automating? Checklist"
 resourceUrl: /resources/automation-checklist.pdf
 resourceSlug: automation-checklist
-backLink: /posts/simple-automations-you-can-set-up-today-without-code/
+backLink: /articles/simple-automations-you-can-set-up-today-without-code/
 ---

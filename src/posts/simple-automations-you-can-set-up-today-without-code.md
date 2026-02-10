@@ -13,7 +13,7 @@ tags:
 
 Automation is one of those words that sounds like it belongs in a factory or a tech company. It's not. It's just a fancy way of saying "make the computer do the boring stuff so you don't have to."
 
-If you run a small business, you're probably doing a bunch of repetitive tasks by hand every single day. Copying info from emails into spreadsheets, sending the same reply to the same question, reminding your team about things that should just happen on their own. (If you're curious what all that manual work is actually costing you, I wrote about [the hidden costs of data entry](/posts/the-hidden-costs-of-manual-data-entry/).) All of that can be automated, and you don't need to know how to code to do it.
+If you run a small business, you're probably doing a bunch of repetitive tasks by hand every single day. Copying info from emails into spreadsheets, sending the same reply to the same question, reminding your team about things that should just happen on their own. (If you're curious what all that manual work is actually costing you, I wrote about [the hidden costs of data entry](/articles/the-hidden-costs-of-manual-data-entry/).) All of that can be automated, and you don't need to know how to code to do it.
 
 This post walks through some practical automations you can set up today with free tools and a little bit of time.
 
@@ -29,7 +29,7 @@ The only difference between those and what we're going to set up here is that we
 
 ## New Lead Comes In, Everything Happens Automatically
 
-Here's what the manual version looks like: someone fills out your contact form. You get an email about it, maybe. You open the email, copy their info into a spreadsheet — one that's probably [costing you more than you think](/posts/the-hidden-costs-of-manual-data-entry/) — then write them back to say thanks and that you'll be in touch. If you're busy, maybe that doesn't happen until the next day. Or the day after that.
+Here's what the manual version looks like: someone fills out your contact form. You get an email about it, maybe. You open the email, copy their info into a spreadsheet — one that's probably [costing you more than you think](/articles/the-hidden-costs-of-manual-data-entry/) — then write them back to say thanks and that you'll be in touch. If you're busy, maybe that doesn't happen until the next day. Or the day after that.
 
 Here's what the automated version looks like: someone fills out your contact form, and then immediately and all at once, their info gets added to your spreadsheet, you get a notification on your phone, and they get a friendly confirmation email letting them know you received their message.
 
@@ -84,7 +84,7 @@ I've been intentionally vague about specific platforms because the tool matters 
 - **IFTTT** - Stands for "If This Then That." More limited than Zapier or Make, but dead simple for basic automations, especially on mobile.
 - **n8n** - Open source and self-hostable if you care about that sort of thing. More technical to set up, but incredibly powerful once it's running.
 
-They all do roughly the same thing. Pick whichever one feels least intimidating and start there. You can always switch later. I cover Zapier and a bunch of other useful options in my [free tools roundup](/posts/free-tools-every-small-business-should-know-about/).
+They all do roughly the same thing. Pick whichever one feels least intimidating and start there. You can always switch later. I cover Zapier and a bunch of other useful options in my [free tools roundup](/articles/free-tools-every-small-business-should-know-about/).
 
 {% render 'partials/components/lead-magnet-form', formName: 'lead-automation-checklist', resourceSlug: 'automation-checklist', heading: 'Not sure what\'s worth automating?', description: 'Download the free checklist to figure out which tasks are worth the setup time.' %}
 

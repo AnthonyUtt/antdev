@@ -27,7 +27,7 @@ Ask yourself:
 - Can you immediately tell what your business does?
 - Is your main call-to-action visible without scrolling?
 
-If your site takes more than 3-4 seconds to load on mobile, you're losing visitors. You can check your exact load time at [PageSpeed Insights](https://pagespeed.web.dev/) - just paste in your URL. That's one of many [free tools](/posts/free-tools-every-small-business-should-know-about/) that can help you understand how your site is performing.
+If your site takes more than 3-4 seconds to load on mobile, you're losing visitors. You can check your exact load time at [PageSpeed Insights](https://pagespeed.web.dev/) - just paste in your URL. That's one of many [free tools](/articles/free-tools-every-small-business-should-know-about/) that can help you understand how your site is performing.
 
 ## The "Can They Find You?" Check (3 minutes)
 

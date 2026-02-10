@@ -6,7 +6,7 @@ eleventyExcludeFromCollections: true
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   {%- for page in collections.all %}
   {%- assign lastChar = page.url | slice: -1 %}
-  {%- if lastChar == '/' and page.data.excludeFromSitemap != true %}
+  {%- if lastChar == '/' and page.data.excludeFromSitemap != true and page.data.noindex != true %}
   <url>
     <loc>{{ site.baseUrl }}{{ page.url | url }}</loc>
     {%- if page.date %}

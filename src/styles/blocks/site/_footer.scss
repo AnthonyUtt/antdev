@@ -104,6 +104,41 @@
     @include apply-theme-color('color', get-color('dark-glare'), get-color('light-shade'));
   }
 
+  &__contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: get-size('300') get-size('500');
+    margin-top: get-size('400');
+  }
+
+  &__contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    font-size: get-size('300');
+    text-decoration: none;
+    @include apply-theme-color('color', get-color('dark-glare'), get-color('light-shade'));
+
+    .footer__contact-icon {
+      width: 1.6em;
+      height: 1.6em;
+      flex-shrink: 0;
+      @include apply-theme-color('background', get-color('primary'), get-color('tertiary-glare'));
+      -webkit-mask-size: contain;
+      mask-size: contain;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      @include apply-theme-color('filter',
+        drop-shadow(0 0 0.4px get-color('primary')),
+        drop-shadow(0 0 0.4px get-color('tertiary-glare'))
+      );
+    }
+
+    &:hover {
+      @include apply-theme-color('color', get-color('primary'), get-color('secondary-glare'));
+    }
+  }
+
   #copyright {
     position: absolute;
     bottom: get-size('300');

@@ -66,12 +66,12 @@ Demonstrates expertise. Personal coding challenges framed accessibly.
 | 4 | Process | "How I Scope and Price a Project" | Skipped |
 | 5 | Practical Guide | "Simple Automations You Can Set Up Today Without Code" | Done |
 | 6 | Business Problems | "The Hidden Costs of Manual Data Entry" | Done |
-| 7 | Technical | "Designing an Event Bus: How I Think Through Architecture Problems" | |
-| 8 | Practical Guide | "How to Write a Project Brief That Gets Good Estimates" | |
-| 9 | Process | "What Happens After You Sign a Contract" | |
-| 10 | Business Problems | "Is Your Website Actually Bringing In Customers?" | |
-| 11 | Practical Guide | "A Simple Framework for Deciding Build vs. Buy" | |
-| 12 | Technical | "Building a Plugin System in Rust: A Problem-Solving Walkthrough" | |
+| 7 | Technical | "Designing an Event Bus: How I Think Through Architecture Problems" | Skipped |
+| 8 | Practical Guide | "How to Write a Project Brief That Gets Good Estimates" |  |
+| 9 | Process | "What Happens After You Sign a Contract" |  |
+| 10 | Business Problems | "Is Your Website Actually Bringing In Customers?" |  |
+| 11 | Practical Guide | "A Simple Framework for Deciding Build vs. Buy" |  |
+| 12 | Technical | "Building a Plugin System in Rust: A Problem-Solving Walkthrough" |  |
 
 ## Tags
 

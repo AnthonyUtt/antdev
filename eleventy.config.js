@@ -31,6 +31,20 @@ export default async function(config) {
 
   addCollections(config);
 
+  config.addTransform("external-links", function(content) {
+    if ((this.page.outputPath || "").endsWith(".html")) {
+      return content.replace(
+        /<a\s+href="(https?:\/\/[^"]*)"([^>]*)>/g,
+        (match, url, rest) => {
+          if (url.startsWith("https://antdev.sh")) return match;
+          if (rest.includes("target=")) return match;
+          return `<a href="${url}"${rest} target="_blank" rel="noopener">`;
+        }
+      );
+    }
+    return content;
+  });
+
   return BASE_CONFIG;
 };
 
